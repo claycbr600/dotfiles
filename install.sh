@@ -22,3 +22,7 @@ else
   echo "installing Oh My Zsh"
   sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 fi
+
+# link zshrc
+echo "linking $HOME/.dotfiles/zshrc -> $HOME/.zshrc"
+ln -sf $HOME/.dotfiles/zshrc $HOME/.zshrc
