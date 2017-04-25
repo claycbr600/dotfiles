@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # link dotfiles
-files=('gemrc' 'vimrc' 'zprofile' 'zshrc');
+files=('gemrc' 'vimrc' 'zprofile');
 for file in "${files[@]}"; do
   echo "linking $HOME/.dotfiles/$file -> $HOME/.$file"
   ln -sf $HOME/.dotfiles/$file $HOME/.$file
