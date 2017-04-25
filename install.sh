@@ -26,3 +26,8 @@ fi
 # link zshrc
 echo "linking $HOME/.dotfiles/zshrc -> $HOME/.zshrc"
 ln -sf $HOME/.dotfiles/zshrc $HOME/.zshrc
+
+# notes
+echo "Don't forgot!"
+echo "  run Vundle :PluginInstall"
+echo "  YouCompleteMe install.py --clang-completer"
