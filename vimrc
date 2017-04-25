@@ -14,9 +14,9 @@ set splitbelow
 set splitright
 set tabstop=2
 
-set nocompatible              " running vim, not vi
-source ~/.vim/vundle.vim      " manage vim bundles
-syntax on                     " enable syntax highlighting
+set nocompatible                " running vim, not vi
+source ~/.dotfiles/vundle.vim   " manage vim bundles
+syntax on                       " enable syntax highlighting
 
 autocmd BufNewFile,BufRead *.es6 set filetype=javascript
 
