@@ -19,6 +19,7 @@ source ~/.dotfiles/vundle.vim   " manage vim bundles
 syntax on                       " enable syntax highlighting
 
 autocmd BufNewFile,BufRead *.es6 set filetype=javascript
+autocmd BufNewFile,BufRead *.py set filetype=python
 
 " disable automatic comments
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
