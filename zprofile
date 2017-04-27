@@ -13,6 +13,9 @@ alias cp='cp -i'
 alias mv='mv -i'
 alias ls="ls -G"
 
+# ruby
+alias be="bundle exec "
+
 # run-help
 unalias run-help 2> /dev/null
 autoload run-help
