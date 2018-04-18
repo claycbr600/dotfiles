@@ -24,6 +24,9 @@ autocmd BufNewFile,BufRead *.py set filetype=python
 " disable automatic comments
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
+" remove trailing whitespace on write
+autocmd BufWritePre * %s/\s\+$//e
+
 " mapleader
 let mapleader = "\<Space>"
 
@@ -68,6 +71,7 @@ nnoremap <Leader>b :ls<CR>:b<Space>
 nnoremap <Leader>d :ls<CR>:bd<Space>
 nnoremap <Leader>o :BufOnly<CR>
 nnoremap <Leader>a <C-^>
+nnoremap <Leader>l :ls<CR>
 
 " window movement
 nnoremap <C-J> <C-W><C-J>
@@ -136,9 +140,9 @@ let g:tagbar_autoclose = 1
 let g:tagbar_show_linenumbers = 1
 let g:tagbar_sort = 1
 
-" ultisnips 
-let g:UltiSnipsExpandTrigger="<tab>"                                            
-let g:UltiSnipsJumpForwardTrigger="<tab>"                                       
+" ultisnips
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 let g:UltiSnipsListSnippets="<c-l>"
 
