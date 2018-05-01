@@ -15,7 +15,7 @@ set splitright
 set tabstop=2
 
 set nocompatible                " running vim, not vi
-source ~/.dotfiles/vundle.vim   " manage vim bundles
+source ~/.vim/vundle.vim        " manage vim bundles
 syntax on                       " enable syntax highlighting
 
 autocmd BufNewFile,BufRead *.es6 set filetype=javascript
@@ -67,7 +67,7 @@ nnoremap $ g$
 nnoremap ^ g^
 
 " buffers
-nnoremap <Leader>b :ls<CR>:b<Space>
+" nnoremap <Leader>b :ls<CR>:b<Space>
 nnoremap <Leader>d :ls<CR>:bd<Space>
 nnoremap <Leader>o :BufOnly<CR>
 nnoremap <Leader>a <C-^>
@@ -125,16 +125,14 @@ let g:ctrlp_max_files=0
 let g:ctrlp_max_depth=40
 
 " tags
-" ctags -R --languages=ruby -f .tags --exclude=.git --exclude=log . $(bundle list --paths)
-set tags=.tags
-let g:autotagTagsFile=".tags"
+let g:vim_tags_ignore_files = ['.gitignore', '.tagsignore']
 nnoremap <C-]> g<C-]>
 vnoremap <C-]> g<C-]>
 nnoremap g<C-]> <C-]>
 vnoremap g<C-]> <C-]>
 
 " tagbar
-nmap <Leader>t :TagbarToggle<CR>
+nmap <silent> <Leader>t :TagbarToggle<CR>
 let g:tagbar_autofocus = 1
 let g:tagbar_autoclose = 1
 let g:tagbar_show_linenumbers = 1
@@ -158,3 +156,8 @@ nmap ga <Plug>(EasyAlign)
 
 " easymotion
 map <Leader><Leader> <Plug>(easymotion-prefix)
+
+" buffergator
+let g:buffergator_suppress_keymaps=1
+nnoremap <silent> <Leader>b :BuffergatorToggle<CR>
+nnoremap <silent> <Leader>B :BuffergatorClose<CR>
