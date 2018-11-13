@@ -33,6 +33,7 @@ let mapleader = "\<Space>"
 " remap common triggers
 nnoremap <Leader>w :w<CR>
 nnoremap <Leader>q :q<CR>
+nnoremap <Leader>s :x<CR>
 imap jk <Esc>
 
 " auto center on matched string
@@ -56,7 +57,8 @@ cabbrev sudow <ESC>:call SudoWrite()
 " copy to clipboard
 vmap <Leader>y "*y
 vmap <Leader>d "*d
-nmap <Leader>p "*p
+nnoremap <Leader>p "*p
+nnoremap <Leader>k "+P
 
 " movement
 nnoremap <CR> zt
