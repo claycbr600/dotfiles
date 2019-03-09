@@ -88,10 +88,3 @@ setopt no_histverify
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-
-export IRBRC=~/.irbrc
-
-# rbenv
-if which rbenv > /dev/null; then
-  eval "$(rbenv init -)"
-fi
