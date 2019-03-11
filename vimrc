@@ -13,6 +13,7 @@ set smartcase
 set splitbelow
 set splitright
 set tabstop=2
+set clipboard=unnamed
 
 set nocompatible                " running vim, not vi
 source ~/.vim/vundle.vim        " manage vim bundles
