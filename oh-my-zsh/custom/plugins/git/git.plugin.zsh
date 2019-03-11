@@ -45,6 +45,7 @@ alias ga='git add'
 alias gaa='git add --all'
 alias gap='git add --patch'
 alias gau='git add --update'
+alias gapp='git apply'
 
 # git branch
 alias gbr='git branch'
@@ -85,7 +86,7 @@ alias gcom='git checkout master'
 alias gconf='git config --list'
 
 # git clone
-alias gcl='git clone --recursive'
+alias gcl='git clone --recurse-submodules'
 
 # git clean
 alias gclean='git clean -fd'
@@ -105,6 +106,7 @@ alias gcpc='git cherry-pick --continue'
 # git diff
 alias gd='git diff'
 alias gdca='git diff --cached'
+alias gds='git diff --staged'
 alias gdt='git diff-tree --no-commit-id --name-only -r'
 alias gdw='git diff --word-diff'
 
@@ -188,20 +190,24 @@ compdef _git gk='gitk'
 alias gke='\gitk --all $(git log -g --pretty=%h)'
 compdef _git gke='gitk'
 
-alias gl='git pull'
-alias glg='git log --stat'
-alias glgp='git log --stat -p'
+alias glg='git log'
+alias glgs='git log --stat'
+alias glgsp='git log --stat -p'
 alias glgg='git log --graph'
 alias glgga='git log --graph --decorate --all'
 alias glgm='git log --graph --max-count=10'
-alias glo='git log --oneline --decorate'
-alias glol="git log --graph --pretty='%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
-alias glola="git log --graph --pretty='%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --all"
-alias glog='git log --oneline --decorate --graph'
-alias gloga='git log --oneline --decorate --graph --all'
-alias glp="_git_log_prettily"
+alias glgo='git log --oneline --decorate'
+alias glgol="git log --graph --pretty='%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+alias glgola="git log --graph --pretty='%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --all"
+alias glgog='git log --oneline --decorate --graph'
+alias glgoga='git log --oneline --decorate --graph --all'
+alias glgp="_git_log_prettily"
 compdef _git glp=git-log
 
+# git pull
+alias gl='git pull'
+
+# git merge
 alias gm='git merge'
 alias gmm='git merge master'
 alias gmom='git merge origin/master'
