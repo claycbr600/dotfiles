@@ -1,9 +1,12 @@
 export EDITOR=vi
 export BC_ENV_ARGS=$HOME/.bcrc
+export SHELL=/usr/local/bin/zsh
 
 # path
-PATH=$HOME/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
 export PATH="$PATH:$HOME/.rvm/bin"
+export PATH="$PATH:/usr/local/opt/qt@5.5/bin"
+export PATH="/usr/local/opt/openssl/bin:$PATH"
+export PATH="$HOME/bin:$PATH"
 
 # irb
 export IRBRC=~/.irbrc
