@@ -2,7 +2,7 @@
 	name = Charlie McCain
 	email = claycbr600@gmail.com
 [push]
-	default = tracking
+	default = simple
 [alias]
   co = checkout
   ci = commit
