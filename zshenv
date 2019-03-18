@@ -9,10 +9,12 @@ export PATH="/usr/local/opt/openssl/bin:$PATH"
 export PATH="$HOME/bin:$PATH"
 
 # load function dirs into fpath
-for dir in $(find $HOME/.functions -type d); do
-  fpath=($dir $fpath)
-done
-export fpath
+if [[ -d $HOME/.functions ]]; then
+  for dir in $(find $HOME/.functions -type d); do
+    fpath=($dir $fpath)
+  done
+  export fpath
+fi
 
 # irb
 export IRBRC=~/.irbrc

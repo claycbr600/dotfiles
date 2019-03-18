@@ -1,4 +1,3 @@
-# system aliases
 alias h="hostname"
 alias rm='rm -i'
 alias cp='cp -i'
@@ -13,3 +12,10 @@ alias ff='find . -type f -name'
 alias be="bundle exec "
 alias rs="echo rails server; rails server"
 alias rc="echo rails console; rails console"
+
+# autoload functions
+if [[ -d $HOME/.functions ]]; then
+  for fn in $(find $HOME/.functions -type f); do
+    autoload -Uz $(basename $fn)
+  done
+fi
