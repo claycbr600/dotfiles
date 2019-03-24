@@ -128,8 +128,8 @@ endif
 let g:ctrlp_max_files=0
 let g:ctrlp_max_depth=40
 
-" tags
-let g:vim_tags_ignore_files = ['.gitignore', '.tagsignore']
+" ctags
+let g:vim_tags_ignore_files = ['.gitignore', expand('$HOME/.tagsignore')]
 nnoremap <C-]> g<C-]>
 vnoremap <C-]> g<C-]>
 nnoremap g<C-]> <C-]>
