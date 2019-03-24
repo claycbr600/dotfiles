@@ -1,9 +1,8 @@
 ---
+gem: --no-document
 :verbose: true
-install: --no-rdoc --no-ri
 :backtrace: false
 :benchmark: false
-update: --no-rdoc --no-ri
 :sources:
 - http://rubygems.org/
 :update_sources: true
