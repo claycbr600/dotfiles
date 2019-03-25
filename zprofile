@@ -10,8 +10,8 @@ alias ff='find . -type f -name'
 
 # ruby aliases
 alias be="bundle exec "
-alias rs="echo rails server; rails server"
-alias rc="echo rails console; rails console"
+alias rs="echo rails server; bundle exec rails server"
+alias rc="echo rails console; bundle exec rails console"
 
 # autoload functions
 if [[ -d $HOME/.functions ]]; then

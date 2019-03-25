@@ -3,7 +3,7 @@ export BC_ENV_ARGS=$HOME/.bcrc
 export SHELL=/usr/local/bin/zsh
 
 # path
-PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin
+PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/sbin
 PATH=$PATH:/usr/local/opt/qt@5.5/bin
 PATH=/usr/local/opt/openssl/bin:$PATH
 export PATH=$HOME/bin:$PATH
