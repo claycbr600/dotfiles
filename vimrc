@@ -101,11 +101,10 @@ nnoremap <Leader>0 10gt
 
 " netrw
 let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
-cnoremap %% <C-R>=fnamemodify(expand('%:h'), ':~:.').'/'<CR>
-map <Leader>ew :e %%<CR>
-map <Leader>es :sp %%<CR>
-map <Leader>ev :vsp %%<CR>
-map <Leader>et :tabe %%<CR>
+map <Leader>ew :e .<CR>
+map <Leader>es :sp .<CR>
+map <Leader>ev :vs .<CR>
+map <Leader>et :tabe .<CR>
 
 " set line numbers for editor windows
 let g:netrw_bufsettings = 'noma nomod nu nobl nowrap ro'
