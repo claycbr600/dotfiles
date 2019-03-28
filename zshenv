@@ -2,6 +2,8 @@ export EDITOR=vi
 export BC_ENV_ARGS=$HOME/.bcrc
 export SHELL=/usr/local/bin/zsh
 export LESS=-Ri
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
 
 # path
 PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/sbin
