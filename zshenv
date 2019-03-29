@@ -27,3 +27,11 @@ export ZSH_TMUX_AUTOSTART=true
 export ZSH_TMUX_AUTOSTART_ONCE=false
 export ZSH_TMUX_AUTOCONNECT=false
 export ZSH_TMUX_AUTOQUIT=true
+
+# zsh syntax highligting
+# declare the variable
+typeset -A ZSH_HIGHLIGHT_STYLES
+# To have paths colored instead of underlined
+ZSH_HIGHLIGHT_STYLES[path]='fg=white'
+ZSH_HIGHLIGHT_STYLES[globbing]='fg=cyan,bold'
+ZSH_HIGHLIGHT_STYLES[history-expansion]='fg=cyan,bold'
