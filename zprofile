@@ -4,6 +4,8 @@ alias cp='cp -i'
 alias mv='mv -i'
 alias q='exit'
 
+bindkey '^K' autosuggest-accept
+
 # find
 alias fd='find . -type d -name'
 alias ff='find . -type f -name'
