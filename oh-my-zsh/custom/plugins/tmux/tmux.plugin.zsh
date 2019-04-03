@@ -11,6 +11,7 @@ alias tmad='tmux attach -d -t'
 alias tmns='tmux new-session -s'
 alias tmka='tmux kill-server'
 alias tmks='tmux kill-session -t'
+alias tmkw='tmux kill-window -t'
 
 # CONFIGURATION VARIABLES
 # Automatically start tmux

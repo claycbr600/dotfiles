@@ -45,5 +45,7 @@ zle -N insert-cycledright
 # iTerm2 does not have these key combinations defined by default; you will need
 # to add them under "Keys" in your profile if you want to use this. You can do
 # this conveniently by loading the "xterm with Numeric Keypad" preset.
-bindkey "\e[1;2D" insert-cycledleft
-bindkey "\e[1;2C" insert-cycledright
+# bindkey "\e[1;2D" insert-cycledleft
+# bindkey "\e[1;2C" insert-cycledright
+bindkey "^b" insert-cycledleft
+bindkey "^f" insert-cycledright
