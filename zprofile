@@ -1,10 +1,15 @@
+# vi: set ft=sh:
 alias h="hostname"
 alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
 alias q='exit'
 
+# autosuggestion
 bindkey '^K' autosuggest-accept
+
+# vi-mode settings
+bindkey -M viins 'jk' vi-cmd-mode
 
 # find
 alias fd='find . -type d -name'
