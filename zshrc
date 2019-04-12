@@ -55,7 +55,7 @@ export HISTIGNORE="ls:cd:cd -:pwd:exit:date:* --help";
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git tmux vi-mode dircycle colored-man-pages zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(git tmux vi-mode colored-man-pages zsh-autosuggestions zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
