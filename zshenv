@@ -35,3 +35,6 @@ typeset -A ZSH_HIGHLIGHT_STYLES
 ZSH_HIGHLIGHT_STYLES[path]='fg=white'
 ZSH_HIGHLIGHT_STYLES[globbing]='fg=cyan,bold'
 ZSH_HIGHLIGHT_STYLES[history-expansion]='fg=cyan,bold'
+
+# zsh autoupdate
+DISABLE_AUTO_UPDATE=true
