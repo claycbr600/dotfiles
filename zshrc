@@ -60,7 +60,6 @@ plugins=(
   tmux
   vi-mode
   colored-man-pages
-  chruby
   zsh-autosuggestions
   zsh-syntax-highlighting
 )

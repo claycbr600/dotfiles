@@ -13,7 +13,7 @@
   hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
 [core]
 	editor = vim
-	excludesfile = /Users/cmccain/.global_ignore
+	excludesfile = /Users/cmccain/.gitignore
 [color]
 	ui = true
 [pager]

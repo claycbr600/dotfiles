@@ -15,6 +15,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'tpope/vim-vinegar'
 Plugin 'majutsushi/tagbar'
+Plugin 'Raimondi/delimitMate'
 Plugin 'mxw/vim-jsx'
 Plugin 'pangloss/vim-javascript'
 Plugin 'SirVer/ultisnips'
@@ -23,6 +24,7 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'schickling/vim-bufonly'
 Plugin 'jeetsukumaran/vim-buffergator'
 Plugin 'szw/vim-tags'
+Plugin 'christoomey/vim-tmux-navigator'
 
 " All of your Plugins must be added before the following line
 call vundle#end()
