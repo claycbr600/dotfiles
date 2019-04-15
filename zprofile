@@ -4,11 +4,12 @@ alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
 alias q='exit'
+alias pgrep='pgrep -l'
 
 # key bindings
 bindkey '^O' autosuggest-accept   # autosuggestion
 bindkey -M viins 'jk' vi-cmd-mode # vi-mode
-bindkey '^\' clear-screen         # clear screen
+bindkey '^_' clear-screen         # clear screen
 
 # find
 alias fd='find . -type d -name'
