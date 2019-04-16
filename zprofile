@@ -9,7 +9,6 @@ alias pgrep='pgrep -l'
 # key bindings
 bindkey '^O' autosuggest-accept   # autosuggestion
 bindkey -M viins 'jk' vi-cmd-mode # vi-mode
-bindkey '^_' clear-screen         # clear screen
 
 # find
 alias fd='find . -type d -name'

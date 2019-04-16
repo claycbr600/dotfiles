@@ -25,6 +25,8 @@ Plugin 'schickling/vim-bufonly'
 Plugin 'jeetsukumaran/vim-buffergator'
 Plugin 'szw/vim-tags'
 Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'christoomey/vim-tmux-runner'
+Plugin 'thoughtbot/vim-rspec'
 
 " All of your Plugins must be added before the following line
 call vundle#end()

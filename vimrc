@@ -34,7 +34,7 @@ let mapleader = "\<Space>"
 " remap common triggers
 nnoremap <Leader>w :w<CR>
 nnoremap <Leader>q :q<CR>
-nnoremap <Leader>s :x<CR>
+nnoremap <Leader>x :x<CR>
 imap jk <Esc>
 
 " auto center on matched string
@@ -70,21 +70,14 @@ nnoremap $ g$
 nnoremap ^ g^
 
 " buffers
-" nnoremap <Leader>b :ls<CR>:b<Space>
-nnoremap <Leader>d :ls<CR>:bd<Space>
 nnoremap <Leader>o :BufOnly<CR>
 nnoremap <Leader>a <C-^>
-nnoremap <Leader>l :ls<CR>
 
 " window movement
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
-" window resizing
-nnoremap <Leader>x <C-W><Bar>
-nnoremap <Leader>y <C-W>_
-nnoremap <Leader>z <C-W>=
 
 " tabs
 nnoremap <Leader>1 1gt
@@ -107,6 +100,13 @@ map <Leader>et :tabe .<CR>
 
 " set line numbers for editor windows
 let g:netrw_bufsettings = 'noma nomod nu nobl nowrap ro'
+
+" auto rebalance window on vim resize
+autocmd VimResized * :wincmd =
+
+" window resizing
+nnoremap <Leader>z :wincmd _<cr>:wincmd \|<cr>
+nnoremap <Leader>= :wincmd =<cr>
 
 " ctrlp
 " silver searcher
@@ -162,4 +162,3 @@ map <Leader><Leader> <Plug>(easymotion-prefix)
 " buffergator
 let g:buffergator_suppress_keymaps=1
 nnoremap <silent> <Leader>b :BuffergatorToggle<CR>
-nnoremap <silent> <Leader>B :BuffergatorClose<CR>
