@@ -15,9 +15,12 @@ alias fd='find . -type d -name'
 alias ff='find . -type f -name'
 
 # ruby aliases
-alias be="bundle exec "
-alias rs="echo be rails server; bundle exec rails server"
-alias rc="echo be rails console; bundle exec rails console"
+alias be='bundle exec '
+alias rs='echo bundle exec rails server; bundle exec rails server'
+alias rc='echo bundle exec rails console; bundle exec rails console'
+alias bes='bundle exec spring '
+alias besrc='echo bundle exec spring rails console; bes rails c'
+alias besrs='echo bundle exec spring rails server; bes rails s'
 
 # chruby
 alias rubies='chruby'
