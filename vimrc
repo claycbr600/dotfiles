@@ -164,7 +164,17 @@ let g:buffergator_suppress_keymaps=1
 nnoremap <silent> <Leader>b :BuffergatorToggle<CR>
 
 " VTR: vim tmux runner
-nnoremap <Leader>ro :VtrOpenRunner { 'orientation': 'v', 'percentage': 20 }<CR>
+nnoremap <Leader>rop :VtrOpenRunner { 'orientation': 'v', 'percentage': 20 }<CR>
+nnoremap <Leader>ror :VtrReorientRunner<CR>
+nnoremap <Leader>rap :VtrAttachToPane
+nnoremap <Leader>rsc :VtrSendCommandToRunner<CR>
+vnoremap <Leader>rsl :VtrSendLinesToRunner<CR>
+nnoremap <Leader>rkr :VtrKillRunner<CR>
+nnoremap <Leader>rfr :VtrFocusRunner<CR>
+nnoremap <Leader>rdr :VtrDetachRunner<CR>
+nnoremap <Leader>rar :VtrReattachRunner<CR>
+nnoremap <Leader>rcr :VtrClearRunner<CR>
+nnoremap <Leader>rfl :VtrFlushCommand<CR>
 
 " rspec
 let g:rspec_command = "call VtrSendCommand('spec {spec}')"
