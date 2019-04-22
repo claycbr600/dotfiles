@@ -162,3 +162,13 @@ map <Leader><Leader> <Plug>(easymotion-prefix)
 " buffergator
 let g:buffergator_suppress_keymaps=1
 nnoremap <silent> <Leader>b :BuffergatorToggle<CR>
+
+" VTR: vim tmux runner
+nnoremap <Leader>ro :VtrOpenRunner { 'orientation': 'v', 'percentage': 20 }<CR>
+
+" rspec
+let g:rspec_command = "call VtrSendCommand('spec {spec}')"
+nnoremap <Leader>sf :call RunCurrentSpecFile()<CR>
+nnoremap <Leader>sn :call RunNearestSpec()<CR>
+nnoremap <Leader>sl :call RunLastSpec()<CR>
+nnoremap <Leader>sa :call RunAllSpecs()<CR>
