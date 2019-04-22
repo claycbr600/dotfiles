@@ -163,6 +163,9 @@ map <Leader><Leader> <Plug>(easymotion-prefix)
 let g:buffergator_suppress_keymaps=1
 nnoremap <silent> <Leader>b :BuffergatorToggle<CR>
 
+" quickscope
+let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
+
 " VTR: vim tmux runner
 nnoremap <Leader>ra :VtrReattachRunner<CR>
 nnoremap <Leader>rp :VtrAttachToPane
