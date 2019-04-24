@@ -13,7 +13,6 @@ set smartcase
 set splitbelow
 set splitright
 set tabstop=2
-set clipboard=unnamed
 
 set nocompatible                " running vim, not vi
 source ~/.vim/vundle.vim        " manage vim bundles
@@ -48,12 +47,6 @@ nnoremap O Ox<BS>
 
 " yank
 nnoremap Y y$
-
-" write
-function SudoWrite()
-  write !sudo tee % > /dev/null
-endfunction
-cabbrev sudow <ESC>:call SudoWrite()
 
 " copy to clipboard
 vmap <Leader>y "*y
