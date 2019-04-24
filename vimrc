@@ -4,7 +4,7 @@ set expandtab
 set hidden
 set ignorecase
 set incsearch
-set number
+set number relativenumber
 set pastetoggle=<F2>
 set ruler
 set shiftround
@@ -168,16 +168,17 @@ let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 
 " VTR: vim tmux runner
 nnoremap <Leader>ra :VtrReattachRunner<CR>
-nnoremap <Leader>rp :VtrAttachToPane
+nnoremap <Leader>rp :VtrAttachToPane<CR>
 nnoremap <Leader>rc :VtrClearRunner<CR>
 nnoremap <Leader>rd :VtrDetachRunner<CR>
-nnoremap <Leader>rl :VtrFlushCommand<CR>
+nnoremap <Leader>ru :VtrFlushCommand<CR>
 nnoremap <Leader>rf :VtrFocusRunner<CR>
 nnoremap <Leader>rk :VtrKillRunner<CR>
-nnoremap <Leader>ro :VtrOpenRunner { 'orientation': 'v', 'percentage': 20 }<CR>
+nnoremap <Leader>ro :VtrOpenRunner { 'orientation': 'v', 'percentage': 22 }<CR>
 nnoremap <Leader>rr :VtrReorientRunner<CR>
 nnoremap <Leader>rs :VtrSendCommandToRunner<CR>
-vnoremap <Leader>rs :VtrSendLinesToRunner<CR>
+nnoremap <Leader>rl :VtrSendLinesToRunner<CR>
+vnoremap <Leader>rl :VtrSendLinesToRunner<CR>
 
 " rspec
 let g:rspec_command = "call VtrSendCommand('spec {spec}')"
