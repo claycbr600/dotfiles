@@ -6,7 +6,6 @@ fi
 # ALIASES
 
 alias tm='tmux'
-alias tma='tmux attach -t'
 alias tmad='tmux attach -d -t'
 alias tmns='tmux new-session -s'
 alias tmka='tmux kill-server'

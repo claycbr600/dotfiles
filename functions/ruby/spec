@@ -1,5 +1,3 @@
-# vi: set ft=sh:
-
 default_rspec() {
   if type rspec > /dev/null; then
     echo 'no gemfile - trying rspec'
@@ -8,7 +6,6 @@ default_rspec() {
     echo 'rspec not found'
   fi
 }
-
 
 if type bundle > /dev/null; then
   if [[ -e Gemfile ]]; then
@@ -25,3 +22,4 @@ if type bundle > /dev/null; then
 else
   default_rspec
 fi
+# vi: set ft=sh:

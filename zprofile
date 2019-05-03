@@ -24,7 +24,6 @@ alias rs='echo bundle exec spring rails server; bes rails s'
 alias rubies='chruby'
 source /usr/local/share/chruby/chruby.sh
 source /usr/local/share/chruby/auto.sh
-chruby 2.6.2
 
 # autoload functions
 if [[ -d $HOME/.functions ]]; then
