@@ -27,7 +27,7 @@ source /usr/local/share/chruby/auto.sh
 
 # autoload functions
 if [[ -d $HOME/.functions ]]; then
-  for fn in $(find $HOME/.functions -type f); do
+  for fn in $(find -L $HOME/.functions -type f); do
     autoload -Uz $(basename $fn)
   done
 fi

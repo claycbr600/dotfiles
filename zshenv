@@ -13,7 +13,7 @@ export PATH=$HOME/bin:$PATH
 
 # load function dirs into fpath
 if [[ -d $HOME/.functions ]]; then
-  for dir in $(find $HOME/.functions -type d); do
+  for dir in $(find -L $HOME/.functions -type d); do
     fpath=($dir $fpath)
   done
   export fpath
