@@ -134,10 +134,12 @@ let g:tagbar_show_linenumbers = 1
 let g:tagbar_sort = 1
 
 " ultisnips
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<tab>"
-let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
-let g:UltiSnipsListSnippets="<c-l>"
+let g:UltiSnipsSnippetDirectories=['ultisnips']
+let g:UltiSnipsSnippetsDir='~/.vim/ultisnips'
+let g:UltiSnipsExpandTrigger='<tab>'
+let g:UltiSnipsJumpForwardTrigger='<tab>'
+let g:UltiSnipsJumpBackwardTrigger='<s-tab>'
+let g:UltiSnipsListSnippets='<c-l>'
 
 " youcompleteme
 let g:ycm_key_list_select_completion=[]
