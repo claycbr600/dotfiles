@@ -3,4 +3,4 @@ TIME=$(( $HOURS * 60 * 60 ))
 echo "going to stay awake for $HOURS hours"
 caffeinate -idmst $TIME;
 osascript -e 'tell app "iTerm" to display dialog "out of coffee!"'
-# vi: set ft=sh:
+# vim: ft=zsh

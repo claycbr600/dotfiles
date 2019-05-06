@@ -1,4 +1,4 @@
-export EDITOR=vi
+export EDITOR=vim
 export BC_ENV_ARGS=$HOME/.bcrc
 export SHELL=/usr/local/bin/zsh
 export LESS=-Ri
