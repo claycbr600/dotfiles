@@ -1,11 +1,12 @@
-# Attach or create tmux session named the same as current directory
-
+# Attach or create tmux session
+# session name defaults to pwd
 path_name="$(basename "$PWD" | tr . -)"
 session_name=${1:-$path_name}
 window_name=${2:-''}
+shell_command=${3:-''}
 
-not_in_tmux() {
-  [ -z "$TMUX" ]
+in_tmux() {
+  [[ -n $TMUX ]]
 }
 
 session_exists() {
@@ -13,91 +14,61 @@ session_exists() {
 }
 
 create_detached_session() {
-  TMUX='' tmux new-session -Ad -s "$session_name"
+  session_exists && return
+
+  TMUX='' tmux new-session -d -s "$session_name"
+  new_session=$?
 }
 
-contains_element() {
+# create window with name
+create_window() {
+  # no window name given or already exists
+  [[ -z $window_name ]] || contains_window "$window_name" && return
+
+  if [[ -n $new_session && $new_session -eq 0 ]]; then
+    tmux rename-window -t "$session_name:1" "$window_name"
+  else
+    tmux new-window -t "$session_name" -n "$window_name"
+  fi
+
+  run_shell_command
+}
+
+run_shell_command() {
+  [[ -z $shell_command ]] && return
+
+  tmux send -t "$session_name:$window_name" "$shell_command && clear" ENTER
+}
+
+contains_window() {
   names=$(tmux list-windows -t "$session_name" -F '#{window_name}')
   names=($(echo $names | tr '\n' ' '))
 
   for item in ${names[@]}; do
-    [[ "$item" == "$1" ]] && return 0
+    [[ $item == $1 ]] && return 0
   done
 
   return 1
 }
 
-attach_session_window() {
-  # no tmux session
-  # create new tmux session with window name
-  if ! session_exists; then
-    tmux new-session -As "$session_name" \; \
-      rename-window -t "zsh" "$window_name"
-    return
-  fi
-
-  # has tmux session
-  # connect to window if name exists
-  if contains_element "$window_name"; then
-    tmux new-session -As "$session_name" \; \
-      select-window -t "$window_name"
-  # create new window with name
+connect_session() {
+  if [[ -n $window_name ]]; then
+    local target="$session_name:$window_name"
   else
-    tmux new-session -As "$session_name" \; \
-      new-window -n "$window_name"
-  fi
-}
-
-attach_session_window_from_tmux() {
-  # no tmux session
-  # create new tmux session with window name
-  if ! session_exists; then
-    create_detached_session
-    tmux switch-client -t "$session_name" \; \
-      rename-window -t "zsh" "$window_name"
-    return
+    local target="$session_name"
   fi
 
-  # has tmux session
-  # connect to window if name exists
-  if contains_element "$window_name"; then
-    tmux switch-client -t "$session_name" \; \
-      select-window -t "$window_name"
-  # create new window with name
+  if ! in_tmux; then
+    tmux attach-session -t "$target"
   else
-    tmux switch-client -t "$session_name" \; \
-      new-window -n "$window_name"
+    tmux switch-client -t "$target"
   fi
 }
 
 create_if_needed_and_attach() {
-  # not in tmux session
-  if not_in_tmux; then
-    # no window name
-    # create/attach tmux session and exit
-    if [[ -z "$window_name" ]]; then
-      tmux new-session -As "$session_name"
-      return
-    fi
-
-    # has window name
-    attach_session_window
-
-  # in tmux session
-  else
-    # no window name
-    # create/attach tmux session and exit
-    if [[ -z "$window_name" ]]; then
-      if ! session_exists; then
-        create_detached_session
-      fi
-      tmux switch-client -t "$session_name"
-      return
-    fi
-
-    # has window name
-    attach_session_window_from_tmux
-  fi
+  create_detached_session
+  create_window
+  connect_session
 }
 
 create_if_needed_and_attach
