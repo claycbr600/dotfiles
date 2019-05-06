@@ -32,3 +32,4 @@ ZSH_HIGHLIGHT_STYLES[history-expansion]='fg=cyan,bold'
 
 # zsh autoupdate
 DISABLE_AUTO_UPDATE=true
+# vim: ft=zsh

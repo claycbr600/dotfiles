@@ -1,4 +1,3 @@
-# vi: set ft=sh:
 alias h="hostname"
 alias rm='rm -i'
 alias cp='cp -i'
@@ -18,11 +17,13 @@ alias be='bundle exec '
 alias bes='bundle exec spring '
 alias rc='echo bundle exec spring rails console; bes rails c'
 alias rs='echo bundle exec spring rails server; bes rails s'
+alias mux='tmuxinator'
 
 # chruby
 alias rubies='chruby'
 source /usr/local/share/chruby/chruby.sh
 source /usr/local/share/chruby/auto.sh
+chruby 2.6.2
 
 # autoload functions
 if [[ -d $HOME/.functions ]]; then
@@ -30,3 +31,4 @@ if [[ -d $HOME/.functions ]]; then
     autoload -Uz $(basename $fn)
   done
 fi
+# vim: ft=zsh

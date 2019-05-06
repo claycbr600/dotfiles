@@ -7,11 +7,17 @@ if ! in_tmux; then
   exit
 fi
 
+# kill pane if multiple present
+num_panes=$(tmux list-panes | wc -l)
+(( $num_panes > 1 )) && exit
+
+# kill window if multiple present
+num_windows=$(tmux list-windows | wc -l)
+(( $num_windows > 1 )) && exit
+
 # exit if only one session
 num_sessions=$(tmux list-sessions | wc -l)
-if (( $num_sessions == 1 )); then
-  exit
-fi
+(( $num_sessions == 1 )) && exit
 
 # switch to next session and quit previous session
 old_session=$(tmux list-sessions | grep attached | awk -F: '{ print $1 }')
