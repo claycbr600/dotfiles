@@ -56,10 +56,12 @@ export HISTIGNORE="ls:cd:cd -:pwd:exit:date:* --help";
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
+  colored-man-pages
+  docker
+  docker-compose
   git
   tmux
   vi-mode
-  colored-man-pages
   zsh-autosuggestions
   zsh-syntax-highlighting
 )
