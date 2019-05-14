@@ -1,0 +1,4 @@
+#compdef cfrc
+
+compadd $(cf apps | awk '{ print $1 }' | grep -E -v "Getting|OK|name|^$")
+# vim: ft=zsh
