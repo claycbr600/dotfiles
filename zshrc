@@ -99,4 +99,4 @@ setopt no_histverify
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 compinit
-# vim: ft=zsh
+# vim:ft=zsh:

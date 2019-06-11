@@ -72,4 +72,4 @@ create_if_needed_and_attach() {
 }
 
 create_if_needed_and_attach
-# vim: ft=zsh
+# vim:ft=zsh:

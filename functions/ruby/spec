@@ -22,4 +22,4 @@ if type bundle > /dev/null; then
 else
   default_rspec
 fi
-# vim: ft=zsh
+# vim:ft=zsh:
