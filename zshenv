@@ -5,14 +5,17 @@ export LESS=-Ri
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 export GROOVY_HOME=/usr/local/opt/groovy/libexec
-export GOROOT=$HOME/go
 export RUBYOPT="-W0"
+
+# go
+export GOPATH=$HOME/go
+export GOROOT=/usr/local/opt/go/libexec
 
 # path
 PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/sbin
 PATH=$PATH:/usr/local/opt/qt@5.5/bin
 PATH=/usr/local/opt/openssl/bin:$PATH
-PATH=$GOROOT/bin:$PATH
+PATH=$PATH:$GOPATH/bin
 export PATH=$HOME/bin:$PATH
 
 # load function dirs into fpath
