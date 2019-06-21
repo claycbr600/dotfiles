@@ -1,4 +1,4 @@
 #compdef apps
 
 compadd $(ls ~/work/didit/apps)
-# vim: ft=zsh
+# vim:ft=zsh:

@@ -15,4 +15,4 @@ elif (( CURRENT == 3)); then
     ;;
   esac
 fi
-# vim: ft=zsh
+# vim:ft=zsh:

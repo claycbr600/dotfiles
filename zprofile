@@ -25,4 +25,4 @@ if [[ -d $HOME/.functions ]]; then
     autoload -Uz $(basename $fn)
   done
 fi
-# vim: ft=zsh
+# vim:ft=zsh:

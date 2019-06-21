@@ -1,0 +1,5 @@
+#compdef repos
+
+echo "$1"
+compadd $(ls ~/work/didit/repos)
+# vim:ft=zsh:
