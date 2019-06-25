@@ -16,10 +16,10 @@ if type bundle > /dev/null; then
       echo "bundle exec rspec $*"
       bundle exec rspec $*
     fi
-  else
-    default_rspec
+
+    return 0
   fi
-else
-  default_rspec
 fi
+
+default_rspec
 # vim:ft=zsh:

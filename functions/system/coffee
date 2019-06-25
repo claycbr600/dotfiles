@@ -1,5 +1,5 @@
-HOURS=${1:-2}
-TIME=$(( $HOURS * 60 * 60 ))
+local -r HOURS=${1:-2}
+local -r TIME=$(( $HOURS * 60 * 60 ))
 echo "going to stay awake for $HOURS hours"
 caffeinate -idmst $TIME;
 osascript -e 'tell app "iTerm" to display dialog "out of coffee!"'

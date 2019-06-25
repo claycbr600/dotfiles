@@ -1,3 +1,3 @@
-local config=${1:-Procfile.dev}
+local -r config=${1:-Procfile.dev}
 foreman start -f $config
 # vim:ft=zsh:
