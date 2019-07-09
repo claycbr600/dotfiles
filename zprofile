@@ -13,8 +13,8 @@ alias fd='find . -type d -name'
 alias ff='find . -type f -name'
 
 # ruby aliases
-alias be='bundle exec '
-alias bes='bundle exec spring '
+alias be='bundle exec'
+alias bes='bundle exec spring'
 alias rc='echo bundle exec spring rails console; bes rails c'
 alias rs='echo bundle exec spring rails server; bes rails s'
 alias mux='tmuxinator'
