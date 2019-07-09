@@ -19,6 +19,9 @@ alias rc='echo bundle exec spring rails console; bes rails c'
 alias rs='echo bundle exec spring rails server; bes rails s'
 alias mux='tmuxinator'
 
+# sql
+alias psql='psql -P pager=off'
+
 # autoload functions
 if [[ -d $HOME/.functions ]]; then
   for fn in $(find -L $HOME/.functions -type f); do
