@@ -14,7 +14,6 @@
 [core]
 	editor = vim
 	excludesfile = /Users/cmccain/.gitignore
+	pager = cat
 [color]
 	ui = true
-[pager]
-	log = false
