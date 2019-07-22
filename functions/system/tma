@@ -5,25 +5,25 @@ local -r session_name=${1:-$path_name}
 local -r window_name=${2:-''}
 local -r shell_command=${3:-''}
 
-in_tmux() {
+sys::in_tmux() {
   [[ -n $TMUX ]]
 }
 
-session_exists() {
+sys::session_exists() {
   tmux has-session -t "$session_name" &> /dev/null
 }
 
-create_detached_session() {
-  session_exists && return
+sys::create_detached_session() {
+  sys::session_exists && return
 
   TMUX='' tmux new-session -d -s "$session_name"
   new_session=$?
 }
 
 # create window with name
-create_window() {
+sys::create_window() {
   # no window name given or already exists
-  [[ -z $window_name ]] || contains_window "$window_name" && return
+  [[ -z $window_name ]] || sys::contains_window "$window_name" && return
 
   if [[ -n $new_session && $new_session -eq 0 ]]; then
     tmux rename-window -t "$session_name:1" "$window_name"
@@ -31,16 +31,16 @@ create_window() {
     tmux new-window -t "$session_name" -n "$window_name"
   fi
 
-  run_shell_command
+  sys::run_shell_command
 }
 
-run_shell_command() {
+sys::run_shell_command() {
   [[ -z $shell_command ]] && return
 
   tmux send -t "$session_name:$window_name" "$shell_command && clear" ENTER
 }
 
-contains_window() {
+sys::contains_window() {
   local names=$(tmux list-windows -t "$session_name" -F '#{window_name}')
   names=($(echo $names | tr '\n' ' '))
 
@@ -51,25 +51,25 @@ contains_window() {
   return 1
 }
 
-connect_session() {
+sys::connect_session() {
   if [[ -n $window_name ]]; then
     local target="$session_name:$window_name"
   else
     local target="$session_name"
   fi
 
-  if ! in_tmux; then
+  if ! sys::in_tmux; then
     tmux attach-session -t "$target"
   else
     tmux switch-client -t "$target"
   fi
 }
 
-create_if_needed_and_attach() {
-  create_detached_session
-  create_window
-  connect_session
+sys::create_if_needed_and_attach() {
+  sys::create_detached_session
+  sys::create_window
+  sys::connect_session
 }
 
-create_if_needed_and_attach
+sys::create_if_needed_and_attach
 # vim:ft=zsh:

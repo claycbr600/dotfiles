@@ -1,9 +1,9 @@
-in_tmux() {
+sys::in_tmux() {
   [[ -n $TMUX ]]
 }
 
 # exit if not in tmux
-if ! in_tmux; then
+if ! sys::in_tmux; then
   exit
 fi
 
