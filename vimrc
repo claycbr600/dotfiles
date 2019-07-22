@@ -18,8 +18,7 @@ set nocompatible                " running vim, not vi
 source ~/.vim/vundle.vim        " manage vim bundles
 syntax on                       " enable syntax highlighting
 
-autocmd BufNewFile,BufRead *.es6 set filetype=javascript
-autocmd BufNewFile,BufRead *.py set filetype=python
+autocmd FileType groovy UltiSnipsAddFiletypes java
 autocmd BufNewFile,BufRead Jenkinsfile set filetype=groovy
 autocmd FileType eruby.yaml setlocal commentstring=#\ %s
 
@@ -136,8 +135,7 @@ let g:tagbar_show_linenumbers = 1
 let g:tagbar_sort = 1
 
 " ultisnips
-let g:UltiSnipsSnippetDirectories=['ultisnips']
-let g:UltiSnipsSnippetsDir='~/.vim/ultisnips'
+let g:UltiSnipsSnippetDirectories=['UltiSnips', 'mysnippets']
 let g:UltiSnipsExpandTrigger='<tab>'
 let g:UltiSnipsJumpForwardTrigger='<tab>'
 let g:UltiSnipsJumpBackwardTrigger='<s-tab>'
