@@ -4,12 +4,17 @@ export SHELL=/usr/local/bin/zsh
 export LESS=-Ri
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
-export GROOVY_HOME=/usr/local/opt/groovy/libexec
 export RUBYOPT="-W0"
 
 # go
 export GOPATH=$HOME/go
 export GOROOT=/usr/local/opt/go/libexec
+
+# groovy
+export GROOVY_HOME=/usr/local/opt/groovy/libexec
+
+# java
+export JAVA_HOME=$(/usr/libexec/java_home)
 
 # path
 PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/sbin
