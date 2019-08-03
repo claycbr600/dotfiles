@@ -1,0 +1,10 @@
+#compdef work
+
+_work() {
+  _arguments \
+    "1: :($(ls ~/work))" \
+    "2: :($([ -d ~/work/${words[2]} ] && ls ~/work/${words[2]}))"
+}
+
+_work "$@"
+# vim:ft=zsh:

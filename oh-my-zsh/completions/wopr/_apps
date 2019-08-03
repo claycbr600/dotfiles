@@ -1,4 +1,0 @@
-#compdef apps
-
-compadd $(ls ~/work/apps)
-# vim: ft=zsh:
