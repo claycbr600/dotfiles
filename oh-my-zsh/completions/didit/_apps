@@ -1,4 +1,6 @@
 #compdef apps
 
-compadd $(ls ~/work/didit/apps)
+list=$(ls ~/work/didit/apps)
+_arguments \
+  "1: :($list)"
 # vim:ft=zsh:

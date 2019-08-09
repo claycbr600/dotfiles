@@ -1,5 +1,6 @@
 #compdef repos
 
-echo "$1"
-compadd $(ls ~/work/didit/repos)
+list=$(ls ~/work/didit/repos)
+_arguments \
+  "1: :($list)"
 # vim:ft=zsh:

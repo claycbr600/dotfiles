@@ -14,6 +14,7 @@ sys::session_exists() {
 }
 
 sys::create_detached_session() {
+  unset new_session
   sys::session_exists && return
 
   TMUX='' tmux new-session -d -s "$session_name"

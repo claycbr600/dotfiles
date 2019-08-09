@@ -1,4 +1,6 @@
 #compdef cfssh
 
-compadd $(cf apps | awk '{ print $1 }' | grep -E -v "Getting|OK|name|^$")
+list=$(cf apps | awk '{ print $1 }' | grep -E -v "Getting|OK|name|^$")
+_arguments \
+  "1: :($list)"
 # vim:ft=zsh:
