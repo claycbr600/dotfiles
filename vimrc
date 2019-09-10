@@ -22,6 +22,9 @@ autocmd FileType groovy UltiSnipsAddFiletypes java
 autocmd BufNewFile,BufRead Jenkinsfile set filetype=groovy
 autocmd FileType eruby.yaml setlocal commentstring=#\ %s
 
+" matchit - jump between matching keywords
+runtime macros/matchit.vim
+
 " disable automatic comments
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
