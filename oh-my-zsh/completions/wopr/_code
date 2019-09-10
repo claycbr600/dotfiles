@@ -1,0 +1,10 @@
+#compdef code
+
+_code() {
+  _arguments \
+    "1: :($(ls ~/code))" \
+    "2: :($([ -d ~/code/${words[2]} ] && ls ~/code/${words[2]}))"
+}
+
+_code "$@"
+# vim:ft=zsh:

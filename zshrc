@@ -60,6 +60,7 @@ plugins=(
   docker
   docker-compose
   git
+  terraform
   tmux
   vi-mode
   zsh-autosuggestions
