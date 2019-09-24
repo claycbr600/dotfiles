@@ -1,0 +1,21 @@
+#compdef vpn
+
+_vpn() {
+  local state
+
+  _arguments \
+    '1: :->cmd' \
+    '2: :->hosts'
+
+  case $state in
+    cmd)
+      _arguments '1:commands:(connect disconnect hosts status)';;
+    hosts)
+      if [[ $words[2] == 'connect' ]]; then
+        _arguments '2:hosts:(ha dc1 dc2)'
+      fi;;
+  esac
+}
+
+_vpn "$@"
+# vim:ft=zsh:
