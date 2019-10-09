@@ -13,6 +13,7 @@ set smartcase
 set splitbelow
 set splitright
 set tabstop=2
+set backspace=indent,eol,start
 
 set nocompatible                " running vim, not vi
 source ~/.vim/vundle.vim        " manage vim bundles
@@ -21,6 +22,7 @@ syntax on                       " enable syntax highlighting
 autocmd FileType groovy UltiSnipsAddFiletypes java
 autocmd BufNewFile,BufRead Jenkinsfile set filetype=groovy
 autocmd FileType eruby.yaml setlocal commentstring=#\ %s
+hi CursorLineNr term=bold cterm=bold ctermfg=012 gui=bold
 
 let g:go_highlight_trailing_whitespace_error=0
 
