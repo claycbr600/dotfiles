@@ -30,6 +30,10 @@ Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'christoomey/vim-tmux-runner'
 Plugin 'thoughtbot/vim-rspec'
 Plugin 'hashivim/vim-terraform'
+" code completion # requires nodejs
+" cd .vim/bundle/coc.nvim && ./install.sh nightly
+" :CocInstall coc-ultisnips
+Plugin 'neoclide/coc.nvim'
 " ruby text objects
 Plugin 'kana/vim-textobj-user'
 Plugin 'nelstrom/vim-textobj-rubyblock'
