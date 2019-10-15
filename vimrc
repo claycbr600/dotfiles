@@ -16,7 +16,7 @@ set tabstop=2
 set backspace=indent,eol,start
 
 set nocompatible                " running vim, not vi
-source ~/.vim/vundle.vim        " manage vim bundles
+source ~/.vim/vim-plug.vim      " manage vim bundles
 syntax on                       " enable syntax highlighting
 
 autocmd FileType groovy UltiSnipsAddFiletypes java
