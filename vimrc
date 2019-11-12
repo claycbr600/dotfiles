@@ -1,6 +1,8 @@
 set autoindent
+set backspace=indent,eol,start
 set cindent
 set expandtab
+set foldlevel=2
 set hidden
 set ignorecase
 set incsearch
@@ -13,7 +15,6 @@ set smartcase
 set splitbelow
 set splitright
 set tabstop=2
-set backspace=indent,eol,start
 
 set nocompatible                " running vim, not vi
 source ~/.vim/vim-plug.vim      " manage vim bundles
@@ -23,6 +24,7 @@ autocmd FileType groovy UltiSnipsAddFiletypes java
 autocmd BufNewFile,BufRead Jenkinsfile set filetype=groovy
 autocmd FileType eruby.yaml setlocal commentstring=#\ %s
 hi CursorLineNr term=bold cterm=bold ctermfg=012 gui=bold
+hi Error None
 
 let g:go_highlight_trailing_whitespace_error=0
 
@@ -54,13 +56,14 @@ nnoremap o ox<BS>
 nnoremap O Ox<BS>
 
 " yank
+" del to null register
 nnoremap Y y$
+nnoremap <Leader>k "_d
 
 " copy to clipboard
 vmap <Leader>y "*y
 vmap <Leader>d "*d
 nnoremap <Leader>p "*p
-nnoremap <Leader>k "+P
 
 " movement
 nnoremap <CR> zt
