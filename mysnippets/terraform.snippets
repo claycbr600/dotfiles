@@ -1,0 +1,45 @@
+snippet var "variable { ... }"
+variable "${1:name}" {
+	description = "${2:desc}"
+	type        = ${3:type}
+}
+endsnippet
+
+snippet vard "variable { ... default = }"
+variable "${1:name}" {
+	description = "${2:desc}"
+	type        = ${3:type}
+	default     = ${4:value}
+}
+endsnippet
+
+snippet out "output { ... }"
+output "${1:name}" {
+	description = "${2:desc}"
+	value       = ${3:value}
+}
+endsnippet
+
+snippet datatmpl "data template"
+data "template_file" "${1:name}" {
+	template = ${2:file()}
+
+	vars = {
+		$0
+	}
+}
+endsnippet
+
+snippet mod "module { ... }"
+module "${1:name}" {
+  source = "${2:source}"
+
+	$0
+}
+endsnippet
+
+snippet res "resource { ... }"
+resource "${1:provider_resource}" "${2:name}" {
+  $0
+}
+endsnippet

@@ -1,0 +1,6 @@
+#compdef tf
+
+list=$(ls ~/work/terraform)
+_arguments \
+  "1: :($list)"
+# vim:ft=zsh:
