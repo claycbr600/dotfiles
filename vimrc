@@ -21,7 +21,7 @@ source ~/.vim/vim-plug.vim      " manage vim bundles
 syntax on                       " enable syntax highlighting
 
 autocmd FileType groovy UltiSnipsAddFiletypes java
-autocmd BufNewFile,BufRead Jenkinsfile set filetype=groovy
+" autocmd BufNewFile,BufRead Jenkinsfile set filetype=groovy
 autocmd FileType eruby.yaml setlocal commentstring=#\ %s
 hi CursorLineNr term=bold cterm=bold ctermfg=012 gui=bold
 hi Error None

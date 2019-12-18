@@ -25,6 +25,9 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'christoomey/vim-tmux-runner'
 Plug 'thoughtbot/vim-rspec'
 Plug 'hashivim/vim-terraform'
+
+Plug 'martinda/Jenkinsfile-vim-syntax'
+
 " code completion # requires nodejs
 " cd .vim/bundle/coc.nvim && ./install.sh nightly
 " :CocInstall coc-ultisnips
