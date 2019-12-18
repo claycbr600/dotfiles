@@ -23,8 +23,10 @@ syntax on                       " enable syntax highlighting
 autocmd FileType groovy UltiSnipsAddFiletypes java
 " autocmd BufNewFile,BufRead Jenkinsfile set filetype=groovy
 autocmd FileType eruby.yaml setlocal commentstring=#\ %s
-hi CursorLineNr term=bold cterm=bold ctermfg=012 gui=bold
-hi Error None
+set cursorline
+highlight clear CursorLine
+highlight CursorLineNr term=bold cterm=bold ctermfg=012 gui=bold
+highlight Error None
 
 let g:go_highlight_trailing_whitespace_error=0
 
@@ -97,10 +99,10 @@ nnoremap <Leader>0 10gt
 
 " netrw
 let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
-map <Leader>ew :e .<CR>
-map <Leader>es :sp .<CR>
-map <Leader>ev :vs .<CR>
-map <Leader>et :tabe .<CR>
+map <Leader>ew :e %:h<CR>
+map <Leader>es :sp %:h<CR>
+map <Leader>ev :vs %:h<CR>
+map <Leader>et :tabe %:h<CR>
 
 " set line numbers for editor windows
 let g:netrw_bufsettings = 'noma nomod nu nobl nowrap ro'
