@@ -1,0 +1,4 @@
+local -r file=${1:-$(date '+%Y-%m-%d').txt}
+
+vim $HOME/scratch/$file
+# vim:ft=zsh:

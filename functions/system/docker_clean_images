@@ -1,0 +1,4 @@
+if docker images | grep '<none>' &> /dev/null; then
+  docker images | grep '<none>' | awk '{ print $3 }' | xargs docker rmi
+fi
+# vim:ft=zsh:

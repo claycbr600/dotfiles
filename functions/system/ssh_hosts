@@ -1,0 +1,2 @@
+cat ~/.ssh/config | grep -i 'Host ' | cut -d ' ' -f 2 | grep -v '*' | sort
+# vim:ft=zsh:
