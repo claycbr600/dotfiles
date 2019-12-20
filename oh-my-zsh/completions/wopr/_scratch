@@ -1,0 +1,4 @@
+#compdef scratch
+
+_files -W ~/scratch
+# vim:ft=zsh:

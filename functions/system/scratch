@@ -1,4 +1,10 @@
 local -r file=${1:-$(date '+%Y-%m-%d').txt}
+local -r dir=$(dirname $file)
+
+if [[ $dir != . && ! -d $HOME/scratch/$dir ]]; then
+  echo "$HOME/scratch/$dir does not exist"
+  mkdir -p $HOME/scratch/$dir
+fi
 
 vim $HOME/scratch/$file
 # vim:ft=zsh:
