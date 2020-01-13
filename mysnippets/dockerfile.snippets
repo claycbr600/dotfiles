@@ -1,0 +1,59 @@
+snippet arg "ARG"
+ARG ${1:key}=${2:value}
+endsnippet
+
+snippet add "ADD"
+ADD ${1:src} ${2:dst}
+endsnippet
+
+snippet cmd "CMD"
+CMD ["${1:command}"$0]
+endsnippet
+
+snippet cp "COPY"
+COPY ${1:src} ${2:dest}
+endsnippet
+
+snippet cpf "COPY --from"
+COPY --from=${1:image} ${2:src} ${3:dest}
+endsnippet
+
+snippet ent "ENTRYPOINT"
+ENTRYPOINT ["${1:command}"$0]
+endsnippet
+
+snippet env "ENV"
+ENV ${1:key}=${2:value}
+endsnippet
+
+snippet exp "EXPOSE"
+EXPOSE ${1:port}
+endsnippet
+
+snippet from "FROM"
+FROM ${1:image}
+endsnippet
+
+snippet label "LABEL"
+LABEL ${1:label}="${2:value}"
+endsnippet
+
+snippet main "MAINTAINER"
+LABEL maintainer="${1:name}"
+endsnippet
+
+snippet run "RUN"
+RUN ${1:command}
+endsnippet
+
+snippet user "USER"
+USER ${1:name}
+endsnippet
+
+snippet vol "VOLUME"
+VOLUME ["${1:path}"]
+endsnippet
+
+snippet wd "WORKDIR"
+WORKDIR ${1:path}
+endsnippet
