@@ -20,9 +20,12 @@ set nocompatible                " running vim, not vi
 source ~/.vim/vim-plug.vim      " manage vim bundles
 syntax on                       " enable syntax highlighting
 
-autocmd FileType groovy UltiSnipsAddFiletypes java
-" autocmd BufNewFile,BufRead Jenkinsfile set filetype=groovy
-autocmd FileType eruby.yaml setlocal commentstring=#\ %s
+" autocmd
+au FileType groovy UltiSnipsAddFiletypes java
+au FileType eruby.yaml setlocal commentstring=#\ %s
+au BufNewFile,BufRead Dockerfile,Dockerfile.*,*.Dockerfile setf dockerfile
+au BufNewFile,BufRead *.snippets setf snippets
+
 set cursorline
 highlight clear CursorLine
 highlight CursorLineNr term=bold cterm=bold ctermfg=012 gui=bold
