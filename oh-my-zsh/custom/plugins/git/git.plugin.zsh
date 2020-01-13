@@ -89,7 +89,7 @@ alias gconf='git config --list'
 alias gcl='git clone --recurse-submodules'
 
 # git clean
-alias gclean='git clean -fd'
+alias gclean='git clean -id'
 
 # git reset
 alias gpristine='git reset --hard && git clean -dfx'
@@ -244,6 +244,18 @@ alias grshh='git reset HEAD --hard'
 alias grt='cd $(git rev-parse --show-toplevel || echo ".")'
 alias grsu='git reset --'
 
+# git stash
+alias gsta='git stash push'
+alias gstam='git stash push -m'
+alias gstau='git stash push -u'
+alias gstaum='git stash push -u -m'
+alias gstaa='git stash apply'
+alias gstac='git stash clear'
+alias gstad='git stash drop'
+alias gstal='git stash list'
+alias gstap='git stash pop'
+alias gstast='git stash show --text'
+
 alias gsb='git status -sb'
 alias gsd='git svn dcommit'
 alias gsi='git submodule init'
@@ -251,14 +263,6 @@ alias gsps='git show --pretty=short --show-signature'
 alias gsr='git svn rebase'
 alias gss='git status -s'
 alias gst='git status'
-alias gsta='git stash'
-alias gstas='git stash save'
-alias gstaa='git stash apply'
-alias gstac='git stash clear'
-alias gstad='git stash drop'
-alias gstal='git stash list'
-alias gstap='git stash pop'
-alias gstast='git stash show --text'
 alias gsu='git submodule update'
 
 alias gts='git tag -s'
