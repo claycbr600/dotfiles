@@ -24,7 +24,6 @@ syntax on                       " enable syntax highlighting
 au FileType groovy UltiSnipsAddFiletypes java
 au FileType eruby.yaml setlocal commentstring=#\ %s
 au BufNewFile,BufRead Dockerfile,Dockerfile.*,*.Dockerfile setf dockerfile
-au BufNewFile,BufRead *.snippets setf snippets
 
 set cursorline
 highlight clear CursorLine
@@ -102,6 +101,7 @@ nnoremap <Leader>0 10gt
 
 " netrw
 let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
+map <Leader>ef :call UltiSnips#RefreshSnippets()<CR>
 map <Leader>ew :e %:h<CR>
 map <Leader>es :sp %:h<CR>
 map <Leader>ev :vs %:h<CR>

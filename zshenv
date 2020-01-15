@@ -20,7 +20,7 @@ export JAVA_HOME=$(/usr/libexec/java_home)
 PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/sbin
 PATH=$PATH:/usr/local/opt/qt@5.5/bin
 PATH=/usr/local/opt/openssl/bin:$PATH
-PATH=$PATH:$GOPATH/bin
+PATH=$GOPATH/bin:$PATH
 export PATH=$HOME/bin:$PATH
 
 # load function dirs into fpath
