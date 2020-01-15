@@ -23,4 +23,6 @@ local -r num_sessions=$(tmux list-sessions | wc -l)
 local -r old_session=$(tmux list-sessions | grep attached | awk -F: '{ print $1 }')
 tmux switch-client -n
 tmux kill-session -t "$old_session"
+
+unset -f sys::in_tmux
 # vim:ft=zsh:

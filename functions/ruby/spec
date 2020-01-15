@@ -22,4 +22,6 @@ if type bundle > /dev/null; then
 fi
 
 rb::default_rspec
+
+unset -f rb::default_rspec
 # vim:ft=zsh:

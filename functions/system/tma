@@ -73,4 +73,13 @@ sys::create_if_needed_and_attach() {
 }
 
 sys::create_if_needed_and_attach
+
+unset -f sys::in_tmux \
+  sys::session_exists \
+  sys::create_detached_session \
+  sys::create_window \
+  sys::run_shell_command \
+  sys::contains_window \
+  sys::connect_session \
+  sys::create_if_needed_and_attach
 # vim:ft=zsh:
