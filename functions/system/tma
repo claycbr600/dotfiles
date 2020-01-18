@@ -38,7 +38,7 @@ sys::create_window() {
 sys::run_shell_command() {
   [[ -z $shell_command ]] && return
 
-  tmux send -t "$session_name:$window_name" "$shell_command && clear" ENTER
+  tmux send -t "$session_name:$window_name" " $shell_command && clear" ENTER
 }
 
 sys::contains_window() {

@@ -46,6 +46,7 @@ COMPLETION_WAITING_DOTS="true"
 export HISTSIZE=32768;
 export HISTFILESIZE=$HISTSIZE;
 export HISTCONTROL=ignoredups;
+export HISTCONTROL=ignoreboth;  # ignoredups / ignorespace
 export HISTIGNORE="ls:cd:cd -:pwd:exit:date:* --help";
 
 # Would you like to use another custom folder than $ZSH/custom?
