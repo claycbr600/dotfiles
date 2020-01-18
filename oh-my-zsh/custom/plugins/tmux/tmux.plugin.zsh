@@ -7,8 +7,6 @@ fi
 
 alias tm='tmux'
 alias tmka='tmux kill-server'
-alias tmks='tmux kill-session -t'
-alias tmkw='tmux kill-window -t'
 
 # CONFIGURATION VARIABLES
 # Automatically start tmux

@@ -1,0 +1,69 @@
+# tmkw [windows...]
+# properly kill windows in the current tmux session with running vim panes.
+# if a pane is running vim, save the vim session, then kill window.
+# if no window index provided, kill current window
+# else kill provided window indices
+#
+# ex: tmkw 1 2 3
+sys::in_tmux() {
+  [[ -n $TMUX ]]
+}
+
+sys::killw() {
+  local -r window=$1
+  local -r session=$(tmux display-message -p '#S')
+  local -a panes=($(tmux list-panes -t "$session:$window" \
+    -F '#{pane_index}.#{pane_current_command}'))
+  local -a items
+
+  for pane in $panes; do
+    IFS=. read -A items <<< "$pane"
+
+    if [[ ${items[2]} == 'vim' ]]; then
+      tmux send -t "$session:$window.${items[1]}" ':wqa' ENTER
+    fi
+  done
+
+  tmux kill-window -t "$session:$window"
+}
+
+sys::kill_windows() {
+  local active_window=$(tmux display-message -p '#I')
+  local -a windows
+  local kill_active_window
+
+  # if no params passed, kill active window
+  if [[ $# -eq 0 ]]; then
+    sys::killw "$activewindow"
+  # kill designated windows
+  else
+    IFS=$'\n' windows=($(sort -r <<< $@))
+
+    if array::contains $active_window $windows; then
+      kill_active_window=true
+    fi
+
+    for i in $windows; do
+      [[ $active_window == $i ]] && continue
+      sys::killw "$i"
+      [[ $i -lt $active_window ]] && let active_window--
+    done
+
+    if [[ -n $kill_active_window ]]; then
+      tmkw
+    fi
+  fi
+}
+
+# exit if not in tmux
+if ! sys::in_tmux; then
+  echo 'not in a tmux session'
+  return
+else
+  sys::kill_windows $@
+fi
+
+unset -f sys::in_tmux \
+  sys::killw \
+  sys::kill_windows
+# vim:ft=zsh:

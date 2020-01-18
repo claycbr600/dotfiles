@@ -1,0 +1,73 @@
+sys::in_tmux() {
+  [[ -n $TMUX ]]
+}
+
+sys::active_sessions() {
+  return $(tmux list-sessions -F '#S' &> /dev/null)
+}
+
+# kill all session windows
+sys::kill_session() {
+  local -r session=$1
+  local -a windows=($(tmux list-windows -t "$session" -F '#I' | sort -r))
+  local -a panes
+  local -a items
+  local window
+
+  for window in "${windows[@]}"; do
+    tmux splitw -t "$session:$window"
+    panes=($(tmux list-panes -t "$session:$window" \
+      -F '#{pane_index}.#{pane_current_command}'))
+
+    for pane in $panes; do
+      IFS=. read -A items <<< "$pane"
+
+      if [[ ${items[2]} == 'zsh' || ${items[2]} == 'tmux' ]]; then
+        tmux send -t "$session:$window.${items[1]}" "tmkw $window" ENTER
+        break
+      fi
+    done
+  done
+}
+
+sys::kill_sessions() {
+  local -a sessions
+  local -a session_list
+
+  if [[ $# -eq 0 ]]; then
+    if sys::in_tmux; then
+      sessions=($(tmux display-message -p '#S'))
+    else
+      echo "must run from tmux if no session name given"
+      return
+    fi
+  else
+    sessions=($@)
+  fi
+
+  session_list=($(tmux list-sessions -F '#S'))
+
+  for session in $sessions; do
+    if ! array::contains "$session" "${session_list[@]}"; then
+      echo "could not find session $session"
+      continue
+    fi
+
+    # delete session
+    sys::kill_session "$session"
+  done
+}
+
+# kill sessions
+if sys::active_sessions; then
+  sys::kill_sessions $@
+# check for active tmux sessions
+else
+  echo 'no active tmux sessions'
+fi
+
+unset -f sys::in_tmux \
+  sys::active_sessions \
+  sys::kill_session \
+  sys::kill_sessions
+# vim:ft=zsh:

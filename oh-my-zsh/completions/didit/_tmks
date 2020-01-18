@@ -1,0 +1,26 @@
+#compdef tmks
+
+if ! tmux list-sessions -F '#S' &> /dev/null; then
+  return
+fi
+
+list=($(tmux list-sessions -F '#S'))
+for (( i = 1; i <= ${#words[@]}; i++ )); do
+  if [[ $i -eq 1 ]]; then
+    continue
+  fi
+
+  if array::contains $words[$i] $list; then
+    tmp=("${list[@]/$words[$i]}")
+    unset list
+    list=($tmp)
+    unset tmp
+  fi
+
+  if [[ ${#list[@]} -eq 0 ]]; then
+    return
+  fi
+done
+
+compadd $list
+# vim:ft=zsh:
