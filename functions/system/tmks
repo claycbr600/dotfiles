@@ -14,19 +14,17 @@ sys::kill_session() {
   local -a items
   local window
 
-  for window in "${windows[@]}"; do
-    tmux splitw -t "$session:$window"
-    panes=($(tmux list-panes -t "$session:$window" \
-      -F '#{pane_index}.#{pane_current_command}'))
+  tmux splitw -t "$session:1"
+  panes=($(tmux list-panes -t "$session:$window" \
+    -F '#{pane_index}.#{pane_current_command}'))
 
-    for pane in $panes; do
-      IFS=. read -A items <<< "$pane"
+  for pane in $panes; do
+    IFS=. read -A items <<< "$pane"
 
-      if [[ ${items[2]} == 'zsh' || ${items[2]} == 'tmux' ]]; then
-        tmux send -t "$session:$window.${items[1]}" "tmkw $window" ENTER
-        break
-      fi
-    done
+    if [[ ${items[2]} == 'zsh' || ${items[2]} == 'tmux' ]]; then
+      tmux send -t "$session:$window.${items[1]}" "tmkw $windows" ENTER
+      break
+    fi
   done
 }
 

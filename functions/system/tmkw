@@ -43,6 +43,7 @@ sys::kill_windows() {
       kill_active_window=true
     fi
 
+    # if current window marked for deletion, kill it last
     for i in $windows; do
       [[ $active_window == $i ]] && continue
       sys::killw "$i"
