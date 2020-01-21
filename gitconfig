@@ -9,7 +9,6 @@
   st = status
   br = branch
   up = pull
-  lg = log --all --color --branches --date=relative --graph --pretty='format:%C(red)%d%Creset %Cgreen%h%Creset %C(cyan)%an%Creset %C(yellow)%cr%Creset - %s'
   hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
 [core]
 	editor = vim

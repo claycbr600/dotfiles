@@ -190,17 +190,9 @@ compdef _git gk='gitk'
 alias gke='\gitk --all $(git log -g --pretty=%h)'
 compdef _git gke='gitk'
 
+# git log
 alias glg='git log'
-alias glgs='git log --stat'
-alias glgsp='git log --stat -p'
-alias glgg='git log --graph'
-alias glgga='git log --graph --decorate --all'
-alias glgm='git log --graph --max-count=10'
-alias glgo='git log --oneline --decorate'
-alias glgol="git log --graph --pretty='%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
-alias glgola="git log --graph --pretty='%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --all"
-alias glgog='git log --oneline --decorate --graph'
-alias glgoga='git log --oneline --decorate --graph --all'
+alias glog="git log --graph --pretty='%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ci) %C(bold blue)<%an>%Creset' --abbrev-commit -20"
 alias glgp="_git_log_prettily"
 compdef _git glp=git-log
 
