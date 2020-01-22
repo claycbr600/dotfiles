@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+docker images |
+  awk '\
+    BEGIN { total = 0 }
+    NR > 1 {
+      size = substr($7, 1, length($7) - 2)
+      if (match($7, "GB")) total += size * 1024
+      if (match($7, "MB")) total += size
+    }
+    END { printf("%.2fGB\n", total / 1024) }
+  '
+# vim:ft=zsh:
