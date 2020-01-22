@@ -246,6 +246,7 @@ alias gstac='git stash clear'
 alias gstad='git stash drop'
 alias gstal='git stash list'
 alias gstap='git stash pop'
+alias gstas='git stash show'
 alias gstast='git stash show --text'
 
 alias gsb='git status -sb'
