@@ -1,0 +1,13 @@
+local -r needle="$1"
+shift
+local -ra haystack=("$@")
+local item
+
+for item in "${haystack[@]}"; do
+  if [[ "$item" == "$needle" ]]; then
+    return 0
+  fi
+done
+
+return 1
+# vim:ft=zsh:

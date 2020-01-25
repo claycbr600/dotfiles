@@ -1,0 +1,8 @@
+local -r separator=${2:-, }
+local -r str=$1
+local -a arr
+
+IFS="$separator" read -A arr <<< "$str"
+
+echo "${arr[@]}"
+# vim:ft=zsh:
