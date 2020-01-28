@@ -20,8 +20,11 @@ local -r num_sessions=$(tmux list-sessions | wc -l)
 (( $num_sessions == 1 )) && exit
 
 # switch to next session and quit previous session
-local -r old_session=$(tmux list-sessions | grep attached | awk -F: '{ print $1 }')
-tmux switch-client -n
+local -r old_session=$(tmux display-message -p '#S')
+local -r switch_session=$(tmux ls | awk -F: '{ print $1 }' |
+  grep -v $old_session | sort | head -1)
+
+tmux switchc -t "$switch_session"
 tmux kill-session -t "$old_session"
 
 unset -f sys::in_tmux

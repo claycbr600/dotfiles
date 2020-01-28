@@ -9,9 +9,18 @@ sys::in_tmux() {
   [[ -n $TMUX ]]
 }
 
+sys::switch_session() {
+  local -r old_session=$1
+  local -r switch_session=$(tmux ls | awk -F: '{ print $1 }' |
+    grep -v $old_session | sort | head -1)
+  tmux switchc -t "$switch_session"
+}
+
 sys::killw() {
   local -r window=$1
   local -r session=$(tmux display-message -p '#S')
+  local -r window_count=$(tmux display-message -p '#{session_windows}')
+  local -r session_count=$(tmux ls | wc -l)
   local -a panes=($(tmux list-panes -t "$session:$window" \
     -F '#{pane_index}.#{pane_current_command}'))
   local -a items
@@ -23,6 +32,10 @@ sys::killw() {
       tmux send -t "$session:$window.${items[1]}" ':wqa' ENTER
     fi
   done
+
+  if [[ $window_count -eq 1 && $session_count -gt 1 ]]; then
+    sys::switch_session "$session"
+  fi
 
   tmux kill-window -t "$session:$window"
 }
@@ -65,6 +78,7 @@ else
 fi
 
 unset -f sys::in_tmux \
+  sys::switch_session \
   sys::killw \
   sys::kill_windows
 # vim:ft=zsh:

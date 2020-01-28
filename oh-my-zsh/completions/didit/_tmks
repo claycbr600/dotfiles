@@ -1,15 +1,11 @@
 #compdef tmks
 
-if ! tmux list-sessions -F '#S' &> /dev/null; then
+if ! tmux ls -F '#S' &> /dev/null; then
   return
 fi
 
-list=($(tmux list-sessions -F '#S'))
-for (( i = 1; i <= ${#words[@]}; i++ )); do
-  if [[ $i -eq 1 ]]; then
-    continue
-  fi
-
+list=($(tmux ls -F '#S'))
+for (( i = 2; i <= ${#words[@]}; i++ )); do
   if array::contains $words[$i] $list; then
     tmp=("${list[@]/$words[$i]}")
     unset list
