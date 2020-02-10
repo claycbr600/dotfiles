@@ -169,10 +169,6 @@ nmap ga <Plug>(EasyAlign)
 " easymotion
 map <Leader><Leader> <Plug>(easymotion-prefix)
 
-" buffergator
-let g:buffergator_suppress_keymaps=1
-nnoremap <silent> <Leader>b :BuffergatorToggle<CR>
-
 " quickscope
 let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 
