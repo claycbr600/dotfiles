@@ -1,4 +1,4 @@
-#compdef scratch
+#compdef notes
 
 _files -W ~/scratch
 # vim:ft=zsh:
