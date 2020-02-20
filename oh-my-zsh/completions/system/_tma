@@ -1,0 +1,10 @@
+#compdef tma
+
+if ! tmux list-sessions -F '#S' &> /dev/null; then
+  return
+fi
+
+list=$(tmux list-sessions -F '#S')
+_arguments \
+  "1: :($list)"
+# vim:ft=zsh:

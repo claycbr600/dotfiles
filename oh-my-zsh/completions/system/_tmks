@@ -1,0 +1,22 @@
+#compdef tmks
+
+if ! tmux ls -F '#S' &> /dev/null; then
+  return
+fi
+
+list=($(tmux ls -F '#S'))
+for (( i = 2; i <= ${#words[@]}; i++ )); do
+  if array::contains $words[$i] $list; then
+    tmp=("${list[@]/$words[$i]}")
+    unset list
+    list=($tmp)
+    unset tmp
+  fi
+
+  if [[ ${#list[@]} -eq 0 ]]; then
+    return
+  fi
+done
+
+compadd $list
+# vim:ft=zsh:
