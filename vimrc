@@ -62,6 +62,8 @@ nnoremap O Ox<BS>
 " yank
 " del to null register
 nnoremap Y y$
+nnoremap yp "0p
+nnoremap yP "0P
 nnoremap <Leader>k "_d
 
 " copy to clipboard
