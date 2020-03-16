@@ -1,14 +1,5 @@
-# local -r file=${1:-$(date '+%Y-%m-%d').txt}
-# local -r dir=$(dirname $file)
-
-# if [[ $dir != . && ! -d $HOME/scratch/$dir ]]; then
-#   mkdir -p $HOME/scratch/$dir
-# fi
-
-# vim $HOME/scratch/$file
 local -a files
-local file
-local dir
+local dir file
 
 if [[ $# -eq 0 ]]; then
   files=("$(date '+%Y-%m-%d').txt")
@@ -23,6 +14,6 @@ for file in $files[@]; do
   fi
 done
 
-files=("${files[@]/#/$HOME/scratch/}" )
+files=("${files[@]/#/$HOME/scratch/}")
 vim $files
 # vim:ft=zsh:
