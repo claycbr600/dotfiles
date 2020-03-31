@@ -15,5 +15,5 @@ for file in $files[@]; do
 done
 
 files=("${files[@]/#/$HOME/scratch/}")
-vim $files
+nvim $files
 # vim:ft=zsh:

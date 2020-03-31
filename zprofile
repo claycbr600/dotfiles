@@ -28,4 +28,9 @@ if [[ -d $HOME/.functions ]]; then
     autoload -Uz $(basename $fn)
   done
 fi
+
+# use neovim if installed
+if type nvim &> /dev/null; then
+    alias vim='nvim'
+fi
 # vim:ft=zsh:

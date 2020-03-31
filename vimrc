@@ -21,7 +21,6 @@ source ~/.vim/vim-plug.vim      " manage vim bundles
 syntax on                       " enable syntax highlighting
 
 " autocmd
-au FileType groovy UltiSnipsAddFiletypes java
 au FileType eruby.yaml setlocal commentstring=#\ %s
 au BufNewFile,BufRead Dockerfile,Dockerfile.*,*.Dockerfile setf dockerfile
 
@@ -29,6 +28,7 @@ set cursorline
 highlight clear CursorLine
 highlight CursorLineNr term=bold cterm=bold ctermfg=012 gui=bold
 highlight Error None
+set guicursor=a:block-blinkon10
 
 let g:go_highlight_trailing_whitespace_error=0
 
@@ -80,6 +80,8 @@ nnoremap $ g$
 nnoremap ^ g^
 
 " buffers
+let g:buffergator_suppress_keymaps = 1
+nnoremap <Leader>b :BuffergatorOpen<CR>
 nnoremap <Leader>o :BufOnly<CR>
 nnoremap <Leader>a <C-^>
 
@@ -103,7 +105,7 @@ nnoremap <Leader>0 10gt
 
 " netrw
 let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
-map <Leader>ef :call UltiSnips#RefreshSnippets()<CR>
+" map <Leader>ef :call UltiSnips#RefreshSnippets()<CR>
 map <Leader>ew :e %:h<CR>
 map <Leader>es :sp %:h<CR>
 map <Leader>ev :vs %:h<CR>
@@ -144,23 +146,43 @@ vnoremap <C-]> g<C-]>
 nnoremap g<C-]> <C-]>
 vnoremap g<C-]> <C-]>
 
-" tagbar
-nmap <silent> <Leader>t :TagbarToggle<CR>
-let g:tagbar_autofocus = 1
-let g:tagbar_autoclose = 1
-let g:tagbar_show_linenumbers = 1
-let g:tagbar_sort = 1
+" vista
+let g:vista#renderer#ctags = 'vista_kind'
+let g:vista_close_on_jump = 1
+let g:vista#renderer#icons = {
+\   'method': '-',
+\   'class': '-',
+\ }
 
-" ultisnips
-let g:UltiSnipsSnippetDirectories=['UltiSnips', 'mysnippets']
-let g:UltiSnipsExpandTrigger='<tab>'
-let g:UltiSnipsJumpForwardTrigger='<tab>'
-let g:UltiSnipsJumpBackwardTrigger='<s-tab>'
-let g:UltiSnipsListSnippets='<c-l>'
+" status line
+let g:lightline = {
+  \ 'colorscheme': 'wombat',
+  \ 'active': {
+  \   'right': [
+  \     ['lineinfo'],
+  \     ['percent'],
+  \     ['filetype']
+  \   ]
+  \ }
+\ }
 
-" youcompleteme
-let g:ycm_key_list_select_completion=[]
-let g:ycm_key_list_previous_completion=[]
+nnoremap <Leader>t :Vista!!<CR>
+nnoremap <Leader>f :Vista finder coc<CR>
+
+" coc.nvim
+inoremap <silent><expr> <TAB>
+\ pumvisible() ? coc#_select_confirm() :
+\   coc#expandableOrJumpable() ?
+\   "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
+\   <SID>check_back_space() ? "\<TAB>" :
+\   coc#refresh()
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+let g:coc_snippet_next = '<tab>'
 
 " easy-align
 " Start interactive EasyAlign in visual mode (e.g. vipga)
