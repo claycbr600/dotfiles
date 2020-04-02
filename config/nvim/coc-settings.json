@@ -12,7 +12,11 @@
       "args": ["--stdio"]
     }
   },
-  "snippets.ultisnips.directories": [
-    "mysnippets"
-  ]
+  "snippets": {
+    "ultisnips": {
+      "directories": [
+        "~/.config/coc/mysnippets"
+      ]
+    }
+  }
 }
