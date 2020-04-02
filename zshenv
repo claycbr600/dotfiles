@@ -9,6 +9,7 @@ export RUBYOPT="-W0"
 # go
 export GOPATH=$HOME/go
 export GOROOT=/usr/local/opt/go/libexec
+export GOBIN=$GOPATH/bin
 
 # groovy
 export GROOVY_HOME=/usr/local/opt/groovy/libexec

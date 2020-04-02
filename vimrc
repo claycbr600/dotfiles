@@ -5,6 +5,7 @@ set expandtab
 set foldlevel=2
 set hidden
 set ignorecase
+set inccommand=split
 set incsearch
 set number relativenumber
 set pastetoggle=<F2>
