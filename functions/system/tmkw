@@ -30,6 +30,7 @@ sys::killw() {
 
     if [[ ${items[2]} == 'vim' ]]; then
       tmux send -t "$session:$window.${items[1]}" ':wqa' ENTER
+      sleep 1
     fi
   done
 
