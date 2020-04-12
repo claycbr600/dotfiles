@@ -5,7 +5,6 @@ set expandtab
 set foldlevel=2
 set hidden
 set ignorecase
-set inccommand=split
 set incsearch
 set number relativenumber
 set pastetoggle=<F2>
@@ -31,6 +30,7 @@ highlight CursorLineNr term=bold cterm=bold ctermfg=012 gui=bold
 highlight Error None
 set guicursor=a:block-blinkon10
 
+let g:highlightedyank_highlight_duration = 300
 let g:go_highlight_trailing_whitespace_error=0
 
 " matchit - jump between matching keywords
