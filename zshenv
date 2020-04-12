@@ -4,7 +4,10 @@ export SHELL=/usr/local/bin/zsh
 export LESS=-Ri
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
+
+# ruby
 export RUBYOPT="-W0"
+export RUBY_CONFIGURE_OPTS="--with-openssl-dir=/usr/local/opt/openssl@1.1"
 
 # go
 export GOPATH=$HOME/go
