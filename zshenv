@@ -20,6 +20,10 @@ export GROOVY_HOME=/usr/local/opt/groovy/libexec
 # java
 export JAVA_HOME=$(/usr/libexec/java_home)
 
+# aws
+export AWS_PAGER=""
+export AWS_PROFILE=$USER
+
 # path
 PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/sbin
 PATH=$PATH:/usr/local/opt/qt@5.5/bin
