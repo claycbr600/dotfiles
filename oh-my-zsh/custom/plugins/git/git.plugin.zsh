@@ -52,6 +52,7 @@ alias gbr='git branch'
 alias gbra='git branch -a'
 alias gbrd='git branch -d'
 alias gbrda='git branch --no-color --merged | command grep -vE "^(\*|\s*(master|develop|dev)\s*$)" | command xargs -n 1 git branch -d'
+alias gbrm='git branch --merged'
 alias gbrnm='git branch --no-merged'
 alias gbrr='git branch --remote'
 
@@ -84,6 +85,7 @@ alias gcom='git checkout master'
 
 # git config
 alias gconf='git config --list'
+alias gcso='git config --get remote.origin.url'
 
 # git clone
 alias gcl='git clone --recurse-submodules'
@@ -120,6 +122,7 @@ compdef _git gdv=git-diff
 alias gf='git fetch'
 alias gfap='git fetch --all --prune'
 alias gfo='git fetch origin'
+alias gfop='git fetch origin --prune'
 
 function gfg() { git ls-files | grep $@ }
 compdef _grep gfg
@@ -211,8 +214,8 @@ alias gmum='git merge upstream/master'
 # git push
 alias gpu='git push'
 alias gpud='git push --dry-run'
-alias gpuoat='git push origin --all && git push origin --tags'
-compdef _git gpuoat=git-push
+alias gpuod='git push origin --delete'
+alias gpuot='git push origin --tags'
 alias gpuu='git push --set-upstream origin $(git_current_branch)'
 alias gpuv='git push -v'
 
@@ -223,7 +226,7 @@ alias grmset='git remote set-url'
 alias grma='git remote add'
 alias grmup='git remote update'
 alias grmv='git remote -v'
-alias grmso="git config --get remote.origin.url"
+alias grmso="git remote show origin"
 alias grb='git rebase'
 alias grba='git rebase --abort'
 alias grbc='git rebase --continue'
@@ -235,6 +238,8 @@ alias grsh='git reset HEAD'
 alias grshh='git reset HEAD --hard'
 alias grt='cd $(git rev-parse --show-toplevel || echo ".")'
 alias grsu='git reset --'
+alias grst='git restore'
+alias grsts='git restore --staged'
 
 # git stash
 alias gsta='git stash push'
@@ -257,6 +262,8 @@ alias gsr='git svn rebase'
 alias gss='git status -s'
 alias gst='git status'
 alias gsu='git submodule update'
+alias gsw='git switch'
+alias gswc='git switch -c'
 
 alias gts='git tag -s'
 alias gtv='git tag | sort -V'
