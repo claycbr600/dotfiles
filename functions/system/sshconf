@@ -4,7 +4,7 @@
 # 2. change entire HostName
 #   sshconf jenkins 10.103.8.24
 # 3. change last octet of HostName
-#   ssh conf jenkins 99
+#   sshconf jenkins 99
 local -r configfile="$HOME/.ssh/config"
 local -r host=$1
 local -r ip=$2
