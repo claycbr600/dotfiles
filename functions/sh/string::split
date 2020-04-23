@@ -4,5 +4,5 @@ local -a arr
 
 IFS="$separator" read -A arr <<< "$str"
 
-echo "${arr[@]}"
+echo -n "${arr[@]}"
 # vim:ft=zsh:

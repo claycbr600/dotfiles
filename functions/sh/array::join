@@ -1,0 +1,14 @@
+local -r separator="$1"
+shift
+local -ar values=("$@")
+
+local out=""
+for (( i=1; i <= ${#values[@]}; i++ )); do
+  if [[ $i -gt 1 ]]; then
+    out="${out}${separator}"
+  fi
+  out="${out}${values[i]}"
+done
+
+echo -n "$out"
+# vim:ft=zsh:
