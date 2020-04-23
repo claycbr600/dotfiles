@@ -22,6 +22,8 @@ syntax on                       " enable syntax highlighting
 
 " autocmd
 au FileType eruby.yaml setlocal commentstring=#\ %s
+au FileType Jenkinsfile setlocal commentstring=//\ %s
+au BufNewFile,BufRead Jenkinsfile* setf Groovy
 au BufNewFile,BufRead Dockerfile,Dockerfile.*,*.Dockerfile setf dockerfile
 
 set cursorline
@@ -161,8 +163,8 @@ let g:lightline = {
   \ 'colorscheme': 'wombat',
   \ 'active': {
   \   'right': [
-  \     ['lineinfo'],
   \     ['percent'],
+  \     ['lineinfo'],
   \     ['filetype']
   \   ]
   \ }
