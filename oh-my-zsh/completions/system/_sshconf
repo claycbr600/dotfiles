@@ -1,4 +1,4 @@
-#compdef sshconf
+#compdef ssh-conf
 
 local -r configfile="$HOME/.ssh/config"
 list=$(grep 'Host ' $configfile | awk '{ print $2 }' | grep -v \* | sort)

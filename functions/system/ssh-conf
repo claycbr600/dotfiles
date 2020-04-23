@@ -1,9 +1,11 @@
 # print or update HostName for ssh/config entry
-# 1. print HostName
+# 1. print all hosts
+#   sshconf
+# 2. print HostName
 #   sshconf jenkins
-# 2. change entire HostName
+# 3. change entire HostName
 #   sshconf jenkins 10.103.8.24
-# 3. change last octet of HostName
+# 4. change last octet of HostName
 #   sshconf jenkins 99
 local -r configfile="$HOME/.ssh/config"
 local -r host=$1
@@ -19,10 +21,14 @@ local -ar hosts=(
   $(grep 'Host ' $configfile | awk '{ print $2 }' | grep -v \* | sort)
 )
 
+# print all hosts
+if [[ -z $host && -z $ip ]]; then
+  printf '%s\n' "${hosts[@]}"
+  return
+fi
+
 # validate host
-if [[ -z $host ]]; then
-  echo 'host is required'
-elif ! array::contains "$host" "${hosts[@]}"; then
+if ! array::contains "$host" "${hosts[@]}"; then
   echo "host $host is not in ssh/config"
   return
 fi
