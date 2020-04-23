@@ -1,0 +1,7 @@
+#compdef sshconf
+
+local -r configfile="$HOME/.ssh/config"
+list=$(grep 'Host ' $configfile | awk '{ print $2 }' | grep -v \* | sort)
+_arguments \
+  "1: :($list)"
+# vim:ft=zsh:

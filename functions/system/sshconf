@@ -1,0 +1,54 @@
+# print or update HostName for ssh/config entry
+# 1. print HostName
+#   sshconf jenkins
+# 2. change entire HostName
+#   sshconf jenkins 10.103.8.24
+# 3. change last octet of HostName
+#   ssh conf jenkins 99
+local -r configfile="$HOME/.ssh/config"
+local -r host=$1
+local -r ip=$2
+
+# validate configfile
+if [[ ! -f $configfile ]]; then
+  echo "$configfile does not exist"
+  return
+fi
+
+local -ar hosts=(
+  $(grep 'Host ' $configfile | awk '{ print $2 }' | grep -v \* | sort)
+)
+
+# validate host
+if [[ -z $host ]]; then
+  echo 'host is required'
+elif ! array::contains "$host" "${hosts[@]}"; then
+  echo "host $host is not in ssh/config"
+  return
+fi
+
+local hn=$(sed -n "/Host $host$/,/HostName/ p" $configfile \
+  | grep HostName \
+  | awk '{ print $2 }')
+
+# print hostname if ip not provided
+if [[ -z $ip ]]; then
+  echo "HostName $hn"
+  return
+fi
+
+# set new hostname
+if [[ $ip =~ '\.' ]]; then
+  # entire hostname
+  new_hn=$ip
+else
+  # replace last octet
+  local new_hn=($(string::split $hn '.'))
+  new_hn=(${new_hn[@]:0:3} $ip)
+  new_hn=$(array::join '.' $new_hn)
+fi
+
+sed -i.bak "/Host $host$/,/HostName/ s/HostName $hn/HostName $new_hn/" \
+  $configfile
+echo "HostName $new_hn"
+# vim:ft=zsh:
