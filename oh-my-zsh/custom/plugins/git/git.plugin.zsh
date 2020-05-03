@@ -108,6 +108,7 @@ alias gcpc='git cherry-pick --continue'
 # git diff
 alias gd='git diff'
 alias gdca='git diff --cached'
+alias gdch='git diff --check'
 alias gds='git diff --staged'
 alias gdt='git diff-tree --no-commit-id --name-only -r'
 alias gdw='git diff --word-diff'
@@ -122,7 +123,7 @@ compdef _git gdv=git-diff
 alias gf='git fetch'
 alias gfap='git fetch --all --prune'
 alias gfo='git fetch origin'
-alias gfop='git fetch origin --prune'
+alias gfpo='git fetch --prune origin'
 
 function gfg() { git ls-files | grep $@ }
 compdef _grep gfg
