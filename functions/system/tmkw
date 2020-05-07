@@ -28,7 +28,7 @@ sys::killw() {
   for pane in $panes; do
     IFS=. read -A items <<< "$pane"
 
-    if [[ ${items[2]} == 'vim' ]]; then
+    if [[ ${items[2]} == 'nvim' || ${items[2]} == 'vim' ]]; then
       tmux send -t "$session:$window.${items[1]}" ':wqa' ENTER
       sleep 1
     fi

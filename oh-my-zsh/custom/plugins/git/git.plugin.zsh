@@ -206,6 +206,7 @@ alias gl='git pull'
 # git merge
 alias gm='git merge'
 alias gmm='git merge master'
+alias gmob='echo "git merge origin/$(git_current_branch)"; git merge origin/$(git_current_branch)'
 alias gmom='git merge origin/master'
 alias gmsq='git merge --squash'
 alias gmt='git mergetool --no-prompt'
