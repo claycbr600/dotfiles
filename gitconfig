@@ -16,3 +16,5 @@
 	pager = cat
 [color]
 	ui = true
+[rerere]
+	enabled = true
