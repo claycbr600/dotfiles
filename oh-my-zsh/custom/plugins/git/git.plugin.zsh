@@ -176,11 +176,11 @@ compdef _git ggu=git-checkout
 alias ggpur='ggu'
 compdef _git ggpur=git-checkout
 
-alias ggpull='git pull origin $(git_current_branch)'
-compdef _git ggpull=git-checkout
+alias glob='git pull origin $(git_current_branch)'
+compdef _git glob=git-checkout
 
-alias ggpush='git push origin $(git_current_branch)'
-compdef _git ggpush=git-checkout
+alias gpuob='git push origin $(git_current_branch)'
+compdef _git gpuob=git-checkout
 
 alias gh='git help'
 
