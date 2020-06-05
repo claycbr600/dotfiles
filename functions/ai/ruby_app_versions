@@ -1,0 +1,18 @@
+# list ruby versions currently in use for checked out didit apps. if a ruby
+# version is supplied, output didit apps that use that version.
+
+local -r files=$(find ~/work/apps -type f -name Gemfile -maxdepth 2 \
+  | xargs grep '^ruby')
+
+if [[ -n $1 ]]; then
+  echo $files \
+    | grep $1 \
+    | cut -d / -f 6
+else
+  echo $files \
+    | cut -d ' ' -f 2 \
+    | tr -d "'\"" \
+    | sort \
+    | uniq
+fi
+# vim:ft=zsh:

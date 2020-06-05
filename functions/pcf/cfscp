@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+cf apps
+# vim:ft=zsh:

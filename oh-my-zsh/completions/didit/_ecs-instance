@@ -1,0 +1,5 @@
+#compdef ecs-instance
+
+_arguments \
+  "1: :(jenkins nginx serverless)"
+# vim:ft=zsh:

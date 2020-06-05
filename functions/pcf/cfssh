@@ -1,0 +1,8 @@
+index=${2:-0}
+
+if [[ $index -ne 0 ]]; then
+  echo "index: $index"
+fi
+
+cf ssh $1 -i $index -t -c /tmp/lifecycle/shell
+# vim:ft=zsh:

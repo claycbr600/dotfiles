@@ -1,0 +1,5 @@
+local -r filename=${1:-Jenkinsfile}
+
+curl -X POST -F "jenkinsfile=<$filename" \
+  http://jenkins-didit-gss.uscis.dhs.gov/pipeline-model-converter/validate
+# vim:ft=zsh:

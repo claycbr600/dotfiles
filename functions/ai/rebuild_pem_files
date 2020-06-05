@@ -1,0 +1,64 @@
+# rebuild openssl pems using keychains. I stole the guts of this script from https://github.com/raggi/openssl-osx-ca
+# which would have been great except that it only exported root CA certs to the openssl pem file. Unfortunately,
+# a lot of our https sites are not exporting the entire cert chain for the https cert. That causes issues when
+# the client doesn't have all of the intermediate certs. This script will export all of the certs in the targeted
+# keychains, both root CA and intermediate certs.
+
+function ai::_genbundle() {
+  local sslimpl=$1
+  local fresh_cert_bundle=$2
+
+  local list=$(brew list $sslimpl 2>/dev/null)
+  list=$(brew list $sslimpl)
+  [[ -z $list ]] && continue
+
+  local openssl=$(echo "$list" | grep bin/openssl | head -n 1)
+
+  # because of the way bash works - these error conditions will not be trapped by the rebuild_pem_files function
+  [[ "${openssl}" = "" ]] && echo "Homebrew $sslimpl not found" && return 1
+
+  local openssldir=$($openssl version -d | cut -d '"' -f 2)
+
+  [[ "${openssldir}" = "" ]] && echo "$sslimpl directory not found" && return 1
+
+  d1=$($openssl md5 ${openssldir}/cert.pem | awk '{print $2}')
+  d2=$($openssl md5 ${fresh_cert_bundle}| awk '{print $2}')
+
+  if [[ "${d1}" = "${d2}" ]]; then
+    echo "${openssldir}/cert.pem up to date"
+  else
+    # XXX: I don't think this is atomic on OSX, but it's as close as we're going to
+    # get without a lot more work.
+    cp -f ${fresh_cert_bundle} ${openssldir}/cert.pem
+
+    echo "${openssldir}/cert.pem updated"
+  fi
+}
+
+# this will rebuild the PEM based CA cert bundle used by any openssl or libressl installed by brew
+local brew=$(which brew)
+
+if [[ ! -x "${brew}" ]]; then
+  echo "Homebrew not in PATH, cannot continue"
+  exit 1
+fi
+
+local temp_cert_bundle=$(/usr/bin/mktemp -t fresh_cert_bundle.pem)
+
+[[ "${temp_cert_bundle}" = "" ]] && echo "mktemp failed" && echo ${temp_cert_bundle} && return 1
+
+echo 'Outputting certs from System.keychain'
+security find-certificate -a -p /Library/Keychains/System.keychain > ${temp_cert_bundle}
+
+echo 'Outputting certs from SystemRootCertificates.keychain'
+security find-certificate -a -p /System/Library/Keychains/SystemRootCertificates.keychain >> ${temp_cert_bundle}
+
+for sslimpl in $(brew list | grep -E '^((libre|open)ssl(@[0-9\.]+)?)$'); do
+  ai::_genbundle $sslimpl $temp_cert_bundle
+done
+
+# clean up the temp file
+rm ${temp_cert_bundle}
+
+unset -f ai::_genbundle
+# vim:ft=zsh:
