@@ -1,4 +1,4 @@
-#compdef ecs-instance
+#compdef ecs
 
 _arguments \
   "1: :(jenkins nginx serverless)"
