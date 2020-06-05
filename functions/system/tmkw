@@ -30,7 +30,11 @@ sys::killw() {
 
     if [[ ${items[2]} == 'nvim' || ${items[2]} == 'vim' ]]; then
       tmux send -t "$session:$window.${items[1]}" ':wqa' ENTER
-      sleep 1
+      while [[ $(tmux list-panes -t "$session:$window" \
+          -F '#{pane_index}.#{pane_current_command}' \
+          | grep "${items[1]}.") == "${items[1]}.${items[2]}" ]]; do
+        sleep 1
+      done
     fi
   done
 
