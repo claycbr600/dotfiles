@@ -4,7 +4,7 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'christoomey/vim-tmux-runner'
 Plug 'claycbr600/vim-buffergator'
 Plug 'hashivim/vim-terraform'
-Plug 'honza/vim-snippets'
+" Plug 'honza/vim-snippets'
 Plug 'itchyny/lightline.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
