@@ -1,4 +1,10 @@
 #!/usr/bin/env bash
 
+# check if ssh enabled on space
+# check if ssh enabled on app
+# get app guid
+# get app_ssh_endpoint / app_ssh_host_key_fingerprint
+# obtain authorization code
+
 cf apps
 # vim:ft=zsh:
