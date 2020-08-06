@@ -1,5 +1,5 @@
 #compdef ecs
 
 _arguments \
-  "1: :(jenkins nginx serverless)"
+  "1: :(jenkins jenkins-rails nginx serverless)"
 # vim:ft=zsh:

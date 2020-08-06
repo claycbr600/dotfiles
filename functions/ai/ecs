@@ -1,4 +1,4 @@
-local -ra instances=('jenkins' 'nginx' 'serverless')
+local -ra instances=('jenkins' 'jenkins-rails' 'nginx' 'serverless')
 
 if ! array::contains $1 $instances; then
   echo "$1 is not a valid ecs instance"
@@ -7,6 +7,5 @@ fi
 
 aws ec2 describe-instances \
   --filters "Name=tag:Name,Values=ECS Instance - $1" \
-  | jq '.Reservations[0].Instances[0].PrivateIpAddress' \
-  | tr -d '"'
+  | jq -r '.Reservations[].Instances[] | select(.State.Name == "running") | .PrivateIpAddress'
 # vim:ft=zsh:
