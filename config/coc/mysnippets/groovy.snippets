@@ -1,3 +1,15 @@
-snippet def "define method"
-charlie is groovy
+snippet def "define method" b
+${1:def} ${2:method}($3) {
+	$0
+}
+endsnippet
+
+snippet ifi "inline if statement" b
+if ($1) $0
+endsnippet
+
+snippet if "if statement" b
+if ($1) {
+  $0
+}
 endsnippet
