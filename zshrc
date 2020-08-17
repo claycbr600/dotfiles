@@ -57,6 +57,7 @@ export HISTIGNORE="ls:cd:cd -:pwd:exit:date:* --help";
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
+  chucknorris
   colored-man-pages
   docker
   docker-compose
@@ -100,5 +101,6 @@ setopt no_histverify
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+[[ -z $TMUX ]] && chuck_cow
 compinit
 # vim:ft=zsh:
