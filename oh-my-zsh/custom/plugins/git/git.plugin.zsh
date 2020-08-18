@@ -80,8 +80,6 @@ alias gcim='git commit -m'
 
 # git checkout
 alias gco='git checkout'
-alias gcob='git checkout -b'
-alias gcom='git checkout master'
 
 # git config
 alias gconf='git config --list'
@@ -266,6 +264,7 @@ alias gst='git status'
 alias gsu='git submodule update'
 alias gsw='git switch'
 alias gswc='git switch -c'
+alias gswm='git switch master'
 
 alias gts='git tag -s'
 alias gtv='git tag | sort -V'
