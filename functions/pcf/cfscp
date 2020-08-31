@@ -1,10 +1,44 @@
 #!/usr/bin/env bash
 
-# check if ssh enabled on space
-# check if ssh enabled on app
+pcf::space_name() {
+  local -a arr=($(cf apps | grep space))
+  local n=$(array::index_of space $arr)
+  echo ${arr[++n]}
+}
+
 # get app guid
+local -r app=$1
+local -r app_guid=$(cf app $app --guid 2> /dev/null)
+
+if [[ $app_guid == 'FAILED' ]]; then
+  echo "app $app could not be found!"
+  return
+fi
+
+echo "app: $app"
+echo "app guid: $app_guid"
+
+# get space name
+local -r space=$(pcf::space_name)
+echo "space name: $space"
+
+# check if ssh enabled on space
+if cf space-ssh-allowed $space | grep -q disabled; then
+  cf allow-space-ssh $space
+fi
+
+# check if ssh enabled on app
+
 # get app_ssh_endpoint / app_ssh_host_key_fingerprint
+local ssh_endpoint=$(cf curl /v2/info | jq -r '.app_ssh_endpoint')
+ssh_endpoint=($(string::split $ssh_endpoint ':'))
+local -r ssh_port=${ssh_endpoint[2]}
+ssh_endpoint=${ssh_endpoint[1]}
+
+echo "ssh_endpoint: $ssh_endpoint"
+echo "ssh_port: $ssh_port"
+
 # obtain authorization code
 
-cf apps
+unset -f pcf::space_name
 # vim:ft=zsh:
