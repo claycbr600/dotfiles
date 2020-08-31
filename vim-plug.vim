@@ -3,6 +3,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'christoomey/vim-tmux-runner'
 Plug 'claycbr600/vim-buffergator'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'hashivim/vim-terraform'
 " Plug 'honza/vim-snippets'
 Plug 'itchyny/lightline.vim'

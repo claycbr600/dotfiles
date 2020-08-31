@@ -188,6 +188,9 @@ endfunction
 
 let g:coc_snippet_next = '<tab>'
 
+" vim-go
+let g:go_def_mapping_enabled = 0
+
 " easy-align
 " Start interactive EasyAlign in visual mode (e.g. vipga)
 xmap ga <Plug>(EasyAlign)

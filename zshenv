@@ -28,7 +28,7 @@ export AWS_PROFILE=$USER
 PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/sbin
 PATH=$PATH:/usr/local/opt/qt@5.5/bin
 PATH=/usr/local/opt/openssl/bin:$PATH
-PATH=$GOPATH/bin:$PATH
+PATH=$GOBIN:$PATH
 export PATH=$HOME/bin:$PATH
 
 # load function dirs into fpath
