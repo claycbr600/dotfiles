@@ -186,7 +186,8 @@ function! s:check_back_space() abort
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
-let g:coc_snippet_next = '<tab>'
+let g:coc_snippet_next = '<TAB>'
+imap <C-O> <Esc>:call coc#util#float_hide()<CR>a
 
 " vim-go
 let g:go_def_mapping_enabled = 0
