@@ -20,5 +20,6 @@
       }
     }
   },
-  "snippets.ultisnips.directories": ["~/.config/coc/mysnippets"]
+  "snippets.ultisnips.directories": ["~/.config/coc/mysnippets"],
+  "suggest.languageSourcePriority": 50
 }
