@@ -1,5 +1,4 @@
 # for when we are connected to the VPN
-echo "Setting DHS proxies..."
 export http_proxy=http://didit-proxy.uscis.dhs.gov:80
 export https_proxy=$http_proxy
 export no_proxy=localhost,127.0.0.1,.dhs.gov,dhs.gov,nexus-gss.uscis.dhs.gov

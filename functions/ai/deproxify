@@ -1,6 +1,3 @@
 # for when we are NOT connected to the VPN
-echo "Unsetting DHS proxies..."
-unset http_proxy
-unset https_proxy
-unset no_proxy
+unset http_proxy https_proxy no_proxy
 # vim:ft=zsh:
