@@ -150,14 +150,6 @@ vnoremap <C-]> g<C-]>
 nnoremap g<C-]> <C-]>
 vnoremap g<C-]> <C-]>
 
-" vista
-let g:vista#renderer#ctags = 'vista_kind'
-let g:vista_close_on_jump = 1
-let g:vista#renderer#icons = {
-\   'method': '-',
-\   'class': '-',
-\ }
-
 " status line
 let g:lightline = {
   \ 'colorscheme': 'wombat',
@@ -170,8 +162,9 @@ let g:lightline = {
   \ }
 \ }
 
-nnoremap <Leader>t :Vista!!<CR>
-nnoremap <Leader>f :Vista finder coc<CR>
+" tagbar
+let g:tagbar_autoclose = 1
+nnoremap <Leader>t :TagbarToggle<CR>
 
 " coc.nvim
 inoremap <silent><expr> <TAB>
