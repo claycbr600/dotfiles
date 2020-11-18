@@ -184,6 +184,7 @@ imap <C-O> <Esc>:call coc#util#float_hide()<CR>a
 
 " vim-go
 let g:go_def_mapping_enabled = 0
+let g:go_fmt_command = "goimports"
 
 " easy-align
 " Start interactive EasyAlign in visual mode (e.g. vipga)
