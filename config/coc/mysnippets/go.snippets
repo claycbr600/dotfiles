@@ -8,7 +8,7 @@ import (
 endsnippet
 
 snippet /^package/ "Package declaration" r
-// Package $1 provides ...
+// Package $1 provides ${2:...}
 package ${1:main}
 endsnippet
 
@@ -39,6 +39,10 @@ snippet interface "Interface declaration" b
 type ${1:Interface} interface {
 	${0:${VISUAL}}
 }
+endsnippet
+
+snippet in "interface"
+interface{}
 endsnippet
 
 snippet if "If statement" b
@@ -78,6 +82,16 @@ func ${1:handler}(${2:w} http.ResponseWriter, ${3:r} *http.Request) {
 }
 endsnippet
 
+snippet gof "goroutine anonymous function"
+go func(${1:params}) {
+	${0:/* code */}
+}(${2})
+endsnippet
+
+snippet golf "goroutine anonymous inline function"
+go func(${1:params}) { ${0:/* code */} }(${2})
+endsnippet
+
 # types and variables
 snippet map "Map type" b
 map[${1:keytype}]${2:valtype}
@@ -95,6 +109,10 @@ snippet vars "Variables declaration" b
 var (
 	${1:name}${2/(.+)/ /}${2:type}${3: = ${0:value} }
 )
+endsnippet
+
+snippet mk "make"
+make(${1:[]string}${2:, ${3:val}})
 endsnippet
 
 snippet json "JSON field"
@@ -125,28 +143,11 @@ snippet br "break"
 break
 endsnippet
 
-snippet ch "channel"
-chan ${0:int}
-endsnippet
-
-snippet cs "case"
-case ${1:value}:
-	${0:${VISUAL}}
-endsnippet
-
 snippet co "constants with iota"
 const (
 	${1:NAME1} = iota
 	${0:NAME2}
 )
-endsnippet
-
-snippet cn "continue"
-continue
-endsnippet
-
-snippet df "defer"
-defer ${0:func}()
 endsnippet
 
 snippet dfr "defer recover"
@@ -157,28 +158,11 @@ defer func() {
 }()
 endsnippet
 
-snippet im "import"
-import (
-	"${1:package}"
-)
-endsnippet
-
-snippet in "interface"
-interface{}
-endsnippet
-
-snippet inf "full interface "
-interface ${1:name} {
-	${2:/* methods */}
-}
-endsnippet
-
 snippet if "if condition"
 if ${1:/* condition */} {
 	${2:${VISUAL}}
 }
 endsnippet
-
 
 snippet ife "if else condition"
 if ${1:/* condition */} {
@@ -239,20 +223,6 @@ for ${1:e} := range ${2:collection} {
 }
 endsnippet
 
-snippet fun "function"
-func ${1:funcName}(${2}) ${3:error} {
-	${4}
-}
-${0}
-endsnippet
-
-snippet fum "method"
-func (${1:receiver} ${2:type}) ${3:funcName}(${4}) ${5:error} {
-	${6}
-}
-${0}
-endsnippet
-
 snippet fumh "http handler function on receiver"
 func (${1:receiver} ${2:type}) ${3:funcName}(${4:w} http.ResponseWriter, ${5:r} *http.Request) {
 	${0:${VISUAL}}
@@ -267,23 +237,11 @@ snippet lp "log println"
 log.Println("${1}")
 endsnippet
 
-snippet mk "make"
-make(${1:[]string}, ${0:0})
-endsnippet
-
-snippet mp "map"
-map[${1:string}]${0:int}
-endsnippet
-
 snippet main "func main()"
 func main() {
 	${1}
 }
 ${0}
-endsnippet
-
-snippet nw "new"
-new(${0:type})
 endsnippet
 
 snippet pa "package"
@@ -295,72 +253,32 @@ panic("${0:msg}")
 endsnippet
 
 snippet pf "fmt.Printf()"
-fmt.Printf("%${1:s}\n", ${2:var})
+fmt.Printf("${1:s}\n", ${2:var})
 endsnippet
 
 snippet pl "fmt.Println()"
-fmt.Println("${1:s}")
+fmt.Println(${1:s})
 endsnippet
 
-snippet rn "range"
-range ${0}
+snippet spf "fmt.Sprintf"
+fmt.Sprintf("${1:s}", ${2:var})
 endsnippet
 
-snippet rt "return"
-return ${0}
+snippet chs "channel send" b
+${1:ch} <- ${2:val}$0
 endsnippet
 
-snippet rs "result"
-result
+snippet chr "channel receieve" b
+<-${1:ch}$0
 endsnippet
 
-snippet sl "select"
+snippet sel "select"
 select {
 case ${1:v1} := <-${2:chan1}
 	${3}
 default:
 	${0}
 }
-endsnippet
-
-snippet sr "string"
-string
-endsnippet
-
-snippet st "struct"
-struct ${1:name} {
-	${2:/* data */}
-}
-${0}
-endsnippet
-
-snippet sw "switch"
-switch ${1:var} {
-case ${2:value1}:
-	${3}
-case ${4:value2}:
-	${5}
-default:
-	${0}
-}
-endsnippet
-
-snippet ps "fmt.Sprintf"
-fmt.Sprintf("%${1:s}", ${2:var})
-endsnippet
-
-snippet t "true"
-true
-endsnippet
-
-snippet g "goroutine named function"
-go ${1:funcName}(${0})
-endsnippet
-
-snippet ga "goroutine anonymous function"
-go func(${1} ${2:type}) {
-	${3:/* code */}
-}(${0})
 endsnippet
 
 snippet test "test function"
@@ -387,7 +305,7 @@ func Test${1:name}(t *testing.T) {
 }
 endsnippet
 
-snippet bench "benchmark function"
+snippet bm "benchmark function"
 func Benchmark${1:name}(b *testing.B) {
 	for i := 0; i < b.N; i++ {
 		${2}
@@ -396,19 +314,13 @@ func Benchmark${1:name}(b *testing.B) {
 ${0}
 endsnippet
 
-snippet cl "composite literals"
-type ${1:name} struct {
-	${2:attrName} ${3:attrType}
-}
-endsnippet
-
-snippet om "if key in a map"
+snippet ifmap "if key in a map"
 if ${1:value}, ok := ${2:map}[${3:key}]; ok == true {
 	${4:/* code */}
 }
 endsnippet
 
-snippet gg "Grouped globals with anonymous struct"
+snippet structa "Grouped globals with anonymous struct"
 var ${1:var} = struct{
 	${2:name} ${3:type}
 }{
