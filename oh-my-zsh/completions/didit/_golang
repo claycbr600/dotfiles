@@ -1,0 +1,6 @@
+#compdef golang
+
+list=$(ls ~/go/src/github.com/claycbr600)
+_arguments \
+  "1: :($list)"
+# vim:ft=zsh:
