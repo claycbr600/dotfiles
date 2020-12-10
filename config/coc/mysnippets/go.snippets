@@ -1,13 +1,13 @@
 # when to abbriviate and when not?
 # b doesn't work here, because it ignores whitespace
 # optional local name?
-snippet /^import/ "Import declaration" r
+snippet /^imp/ "Import declaration" r
 import (
 	"${1:package}"
 )
 endsnippet
 
-snippet /^package/ "Package declaration" r
+snippet /^pack/ "Package declaration" r
 // Package $1 provides ${2:...}
 package ${1:main}
 endsnippet
@@ -35,7 +35,7 @@ type ${1:Struct} struct {
 }
 endsnippet
 
-snippet interface "Interface declaration" b
+snippet inf "Interface declaration" b
 type ${1:Interface} interface {
 	${0:${VISUAL}}
 }
@@ -48,6 +48,21 @@ endsnippet
 snippet if "If statement" b
 if ${1:condition}${1/(.+)/ /}{
 	${0:${VISUAL}}
+}
+endsnippet
+
+snippet ife "if else condition"
+if ${1:/* condition */} {
+	${2:${VISUAL}}
+} else {
+	${0}
+}
+endsnippet
+
+# error handling
+snippet iferr "Basic error handling" b
+if ${1:${2:statement}; }err != nil {
+	log.${3:Fatal}(${4:err})$0
 }
 endsnippet
 
@@ -93,7 +108,7 @@ go func(${1:params}) { ${0:/* code */} }(${2})
 endsnippet
 
 # types and variables
-snippet map "Map type" b
+snippet map "Map type"
 map[${1:keytype}]${2:valtype}
 endsnippet
 
@@ -117,13 +132,6 @@ endsnippet
 
 snippet json "JSON field"
 \`json:"${1:displayName}"\`
-endsnippet
-
-# error handling
-snippet err "Basic error handling" b
-if err != nil {
-	log.${1:Fatal}(err)
-}
 endsnippet
 
 # vim-snippets
@@ -158,20 +166,6 @@ defer func() {
 }()
 endsnippet
 
-snippet if "if condition"
-if ${1:/* condition */} {
-	${2:${VISUAL}}
-}
-endsnippet
-
-snippet ife "if else condition"
-if ${1:/* condition */} {
-	${2:${VISUAL}}
-} else {
-	${0}
-}
-endsnippet
-
 snippet el "else"
 else {
 	${0:${VISUAL}}
@@ -185,24 +179,8 @@ if err != nil {
 ${0}
 endsnippet
 
-snippet f "false"
-false
-endsnippet
-
 snippet ft "fallthrough"
 fallthrough
-endsnippet
-
-snippet fl "float"
-float32
-endsnippet
-
-snippet f3 "float32"
-float32
-endsnippet
-
-snippet f6 "float64"
-float64
 endsnippet
 
 snippet for "for loop"
@@ -234,7 +212,7 @@ log.Printf("%${1:s}", ${2:var})
 endsnippet
 
 snippet lp "log println"
-log.Println("${1}")
+log.Println(${1})
 endsnippet
 
 snippet main "func main()"
@@ -242,10 +220,6 @@ func main() {
 	${1}
 }
 ${0}
-endsnippet
-
-snippet pa "package"
-package ${1:main}
 endsnippet
 
 snippet pn "panic"
@@ -281,13 +255,13 @@ default:
 }
 endsnippet
 
-snippet test "test function"
+snippet tes "test function"
 func Test${1:name}(t *testing.T) {
 	${0:${VISUAL}}
 }
 endsnippet
 
-snippet testt "table test function"
+snippet ttes "table test function"
 func Test${1:name}(t *testing.T) {
 	tests := []struct {
 		name string
