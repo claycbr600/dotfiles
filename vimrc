@@ -31,7 +31,7 @@ hi clear CursorLine
 hi CursorLineNr term=bold cterm=bold ctermfg=012 gui=bold
 hi Error None
 " make error texts have a red color
-hi CocErrorHighlight ctermfg=Red  guifg=#ff0000
+hi CocErrorHighlight guifg=#ff0000
 hi CocErrorSign guifg=#d1666a
 hi CocHintSign guifg=Blue
 set guicursor=a:block-blinkon10
