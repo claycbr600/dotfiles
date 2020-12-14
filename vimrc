@@ -27,10 +27,16 @@ au BufNewFile,BufRead Jenkinsfile* setf Groovy
 au BufNewFile,BufRead Dockerfile,Dockerfile.*,*.Dockerfile setf dockerfile
 
 set cursorline
-highlight clear CursorLine
-highlight CursorLineNr term=bold cterm=bold ctermfg=012 gui=bold
-highlight Error None
+hi clear CursorLine
+hi CursorLineNr term=bold cterm=bold ctermfg=012 gui=bold
+hi Error None
+" make error texts have a red color
+hi CocErrorHighlight ctermfg=Red  guifg=#ff0000
+hi CocErrorSign guifg=#d1666a
+hi CocHintSign guifg=Blue
 set guicursor=a:block-blinkon10
+" hi CocInfoSign guibg=#353b45
+" hi CocWarningSign guifg=#d1cd66
 
 let g:highlightedyank_highlight_duration = 300
 let g:go_highlight_trailing_whitespace_error=0
