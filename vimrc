@@ -33,10 +33,11 @@ hi Error None
 " make error texts have a red color
 hi CocErrorHighlight guifg=#ff0000
 hi CocErrorSign guifg=#d1666a
+hi CocFloating ctermbg=13
 hi CocHintSign guifg=Blue
+hi CocWarningSign guifg=#d1cd66
 set guicursor=a:block-blinkon10
 " hi CocInfoSign guibg=#353b45
-" hi CocWarningSign guifg=#d1cd66
 
 let g:highlightedyank_highlight_duration = 300
 let g:go_highlight_trailing_whitespace_error=0
