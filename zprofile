@@ -12,15 +12,32 @@ bindkey -M viins 'jk' vi-cmd-mode # vi-mode
 alias fd='find . -type d -name'
 alias ff='find . -type f -name'
 
+# run-help
+unalias run-help 2> /dev/null
+autoload run-help
+alias help='run-help'
+
+# command aliases
+alias pg.server='pg_ctl -D /usr/local/var/postgres'
+alias psql='psql -P pager=off'
+alias umount='diskutil unmount'
+alias todo='ultralist'
+
 # ruby aliases
 alias be='bundle exec'
 alias bes='bundle exec spring'
 alias rc='echo bundle exec spring rails console; bes rails c'
 alias rs='echo bundle exec spring rails server; bes rails s'
-alias mux='tmuxinator'
 
-# sql
-alias psql='psql -P pager=off'
+# chruby
+source /usr/local/share/chruby/chruby.sh
+source /usr/local/share/chruby/auto.sh
+chruby 2.7.1
+alias rubies='chruby'
+
+if command -v pyenv &> /dev/null; then
+  eval "$(pyenv init -)"
+fi
 
 # autoload functions
 if [[ -d $HOME/.functions ]]; then
