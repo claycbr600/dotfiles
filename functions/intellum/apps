@@ -1,0 +1,11 @@
+if [[ -n $1 ]]; then
+  tma apps $1 "cd ~/work/apps/$1 \
+    && tmux splitw -h -l 90 \
+      'echo \"git fetch origin\" && git fetch origin && zsh -l || zsh -l' \
+    && tmux splitw -l 24 \
+    && tmux selectp -t 0"
+else
+  cd ~/work/apps
+  pwd
+fi
+# vim:ft=zsh:
