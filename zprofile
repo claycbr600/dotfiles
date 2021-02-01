@@ -33,7 +33,6 @@ alias rs='echo bundle exec spring rails server; bes rails s'
 # chruby
 source /usr/local/share/chruby/chruby.sh
 source /usr/local/share/chruby/auto.sh
-chruby 2.7.1
 alias rubies='chruby'
 
 if command -v pyenv &> /dev/null; then
