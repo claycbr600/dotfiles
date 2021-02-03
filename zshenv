@@ -20,13 +20,13 @@ export GROOVY_HOME=/usr/local/opt/groovy/libexec
 # java
 export JAVA_HOME=$(/usr/libexec/java_home)
 
-# aws
-export AWS_PAGER=""
-export AWS_PROFILE=$USER
+# postgres
+export PKG_CONFIG_PATH="/usr/local/opt/postgresql@12/lib/pkgconfig"
 
 # path
 PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/sbin
 # PATH=$PATH:/usr/local/opt/qt@5.5/bin
+PATH=/usr/local/opt/postgresql@12/bin:$PATH
 PATH=/usr/local/opt/openssl/bin:$PATH
 PATH=/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/bin:$PATH
 PATH=$GOBIN:$PATH
