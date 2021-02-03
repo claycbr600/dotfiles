@@ -19,8 +19,6 @@ autoload run-help
 alias help='run-help'
 
 # command aliases
-alias pg.server='pg_ctl -D /usr/local/var/postgres'
-alias psql='psql -P pager=off'
 alias umount='diskutil unmount'
 alias todo='ultralist'
 
