@@ -1,0 +1,6 @@
+#compdef apps
+
+list=$(ls ~/work/apps)
+_arguments \
+  "1: :($list)"
+# vim:ft=zsh:

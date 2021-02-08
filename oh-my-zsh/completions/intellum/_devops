@@ -1,0 +1,6 @@
+#compdef devops
+
+list=$(ls -d ~/work/devops/*/ | xargs basename)
+_arguments \
+  "1: :($list)"
+# vim:ft=zsh:
