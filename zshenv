@@ -50,6 +50,7 @@ typeset -A ZSH_HIGHLIGHT_STYLES
 ZSH_HIGHLIGHT_STYLES[path]='fg=white'
 ZSH_HIGHLIGHT_STYLES[globbing]='fg=cyan,bold'
 ZSH_HIGHLIGHT_STYLES[history-expansion]='fg=cyan,bold'
+VI_MODE_SET_CURSOR=true
 
 # zsh autoupdate
 DISABLE_AUTO_UPDATE=true

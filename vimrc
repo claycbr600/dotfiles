@@ -36,7 +36,6 @@ hi CocErrorSign guifg=#d1666a
 hi CocFloating ctermbg=13
 hi CocHintSign guifg=Blue
 hi CocWarningSign guifg=#d1cd66
-set guicursor=a:block-blinkon10
 " hi CocInfoSign guibg=#353b45
 
 let g:highlightedyank_highlight_duration = 300
