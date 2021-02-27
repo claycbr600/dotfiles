@@ -33,7 +33,7 @@ hi Error None
 " make error texts have a red color
 hi CocErrorHighlight guifg=#ff0000
 hi CocErrorSign guifg=#d1666a
-hi CocFloating ctermbg=13
+hi CocFloating ctermbg=5
 hi CocHintSign guifg=Blue
 hi CocWarningSign guifg=#d1cd66
 " hi CocInfoSign guibg=#353b45
