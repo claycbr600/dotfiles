@@ -10,20 +10,6 @@ snippet [ "array block"
 
 endsnippet
 
-
-global !p
-
-def write_instance_vars(arglist, snip):
-	args = str(arglist).split(',')
-	for arg in args:
-		name = arg.strip().replace(':', ' ').split(' ', 1)[0]
-		if name:
-			snip += '  @{} = {}'.format(name, name)
-		else:
-			snip += ''
-
-endglobal
-
 #
 # Snippets
 #
@@ -45,7 +31,8 @@ end
 endsnippet
 
 snippet defi "def initialize ..."
-def initialize($1)`!p write_instance_vars(t[1],snip)`$0
+def initialize($1)
+  $0
 end
 endsnippet
 
@@ -313,11 +300,9 @@ when ${2:expression}
 end
 endsnippet
 
-snippet class "class <class_name> def initialize ... end end"
+snippet cla "class <class_name> def initialize ... end end"
 class ${1:`!p snip.rv = snip.basename.title().replace('_', '')`}
-	def initialize(${2:*args})
-		$0
-	end
+  $0
 end
 endsnippet
 
@@ -507,28 +492,6 @@ until ${1:condition}
 end
 endsnippet
 
-snippet cla class .. end
-class ${1:`substitute(vim_snippets#Filename(), '\(_\|^\)\(.\)', '\u\2', 'g')`}
-	${0}
-end
-endsnippet
-
-snippet clai class .. initialize .. end
-class ${1:`substitute(vim_snippets#Filename(), '\(_\|^\)\(.\)', '\u\2', 'g')`}
-	def initialize(${2:args})
-		${0}
-	end
-end
-endsnippet
-
-snippet cla< class .. < ParentClass .. initialize .. end
-class ${1:`substitue(vim_snippets#Filename(), '\(_\|^\)\(.\)', '\u\2', 'g')`} < ${2:ParentClass}
-	def initialize(${3:args})
-		${0}
-	end
-end
-endsnippet
-
 snippet blankslate class BlankSlate .. initialize .. end
 class ${0:BlankSlate}
 	instance_methods.each { |meth| undef_method(meth) unless meth =~ /\A__/ }
@@ -540,23 +503,6 @@ class << ${1:self}
 	${0}
 end
 # class .. < DelegateClass .. initialize .. end
-endsnippet
-
-snippet cla-
-class ${1:`substitute(vim_snippets#Filename(), '\(_\|^\)\(.\)', '\u\2', 'g')`} < DelegateClass(${2:ParentClass})
-	def initialize(${3:args})
-		super(${4:del_obj})
-
-		${0}
-	end
-end
-endsnippet
-
-snippet mod module .. end
-module ${1:`substitute(vim_snippets#Filename(), '\(_\|^\)\(.\)', '\u\2', 'g')`}
-	${0}
-end
-# attr_reader
 endsnippet
 
 snippet r
@@ -619,13 +565,6 @@ def self.${1:class_method_name}
 	${0}
 end
 # def initialize
-endsnippet
-
-snippet definit
-def initialize(${1:args})
-	${0}
-end
-# def method_missing
 endsnippet
 
 snippet defmm
@@ -1019,9 +958,6 @@ snippet do
 do
 	${0}
 end
-# this is for one or more variables. typing a ", " is that cheap that it may
-# not be worth adding another snippet. should 0/1 placeholders change order?
-# its a good idea to think about the var name, so use it first
 endsnippet
 
 snippet dov
