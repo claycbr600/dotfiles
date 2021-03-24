@@ -163,10 +163,70 @@ let g:lightline = {
   \   'right': [
   \     ['percent'],
   \     ['lineinfo'],
-  \     ['filetype']
+  \     ['filetype'],
+  \     ['gutentags']
   \   ]
-  \ }
+  \ },
+  \ 'component_function': {
+    \ 'gutentags': 'gutentags#statusline',
+  \ },
 \ }
+
+augroup MyGutentagsStatusLineRefresher
+  autocmd!
+  autocmd User GutentagsUpdating call lightline#update()
+  autocmd User GutentagsUpdated call lightline#update()
+augroup END
+
+" gutentags
+let g:gutentags_cache_dir = expand('~/.cache/tags')
+let g:gutentags_ctags_exclude = [
+  \ '*.git', '*.svg', '*.hg',
+  \ '*/tests/*',
+  \ 'build',
+  \ 'dist',
+  \ '*sites/*/files/*',
+  \ 'bin',
+  \ 'node_modules',
+  \ 'bower_components',
+  \ 'cache',
+  \ 'compiled',
+  \ 'docs',
+  \ 'example',
+  \ 'bundle',
+  \ 'vendor',
+  \ '*.md',
+  \ '*-lock.json',
+  \ '*.lock',
+  \ '*bundle*.js',
+  \ '*build*.js',
+  \ '.*rc*',
+  \ '*.json',
+  \ '*.min.*',
+  \ '*.map',
+  \ '*.bak',
+  \ '*.zip',
+  \ '*.pyc',
+  \ '*.class',
+  \ '*.sln',
+  \ '*.Master',
+  \ '*.csproj',
+  \ '*.tmp',
+  \ '*.csproj.user',
+  \ '*.cache',
+  \ '*.pdb',
+  \ 'tags*',
+  \ 'cscope.*',
+  \ '*.css',
+  \ '*.less',
+  \ '*.scss',
+  \ '*.exe', '*.dll',
+  \ '*.mp3', '*.ogg', '*.flac',
+  \ '*.swp', '*.swo',
+  \ '*.bmp', '*.gif', '*.ico', '*.jpg', '*.png',
+  \ '*.rar', '*.zip', '*.tar', '*.tar.gz', '*.tar.xz', '*.tar.bz2',
+  \ '*.pdf', '*.doc', '*.docx', '*.ppt', '*.pptx',
+\ ]
 
 " tagbar
 let g:tagbar_autoclose = 1
