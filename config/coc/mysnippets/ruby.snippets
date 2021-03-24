@@ -31,7 +31,7 @@ end
 endsnippet
 
 snippet defi "def initialize ..."
-def initialize($1)
+def initialize${2:(${3:*args})}
   $0
 end
 endsnippet
@@ -507,12 +507,10 @@ endsnippet
 
 snippet r
 attr_reader :${0:attr_names}
-# attr_writer
 endsnippet
 
 snippet w
 attr_writer :${0:attr_names}
-# attr_accessor
 endsnippet
 
 snippet rw
