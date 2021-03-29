@@ -23,6 +23,14 @@ export JAVA_HOME=$(/usr/libexec/java_home)
 # postgres
 export PKG_CONFIG_PATH="/usr/local/opt/postgresql@12/lib/pkgconfig"
 
+# aws
+export AWS_PAGER=""
+export AWS_PROFILE=intellum
+
+# ansible
+export PATH="/usr/local/opt/ansible@2.9/bin:$PATH"
+export ANSIBLE_VAULT_PASSWORD_FILE=./.vault_pass
+
 # path
 PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/sbin
 # PATH=$PATH:/usr/local/opt/qt@5.5/bin
