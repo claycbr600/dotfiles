@@ -29,9 +29,11 @@ alias rc='echo bundle exec spring rails console; bes rails c'
 alias rs='echo bundle exec spring rails server; bes rails s'
 
 # chruby
-source /usr/local/share/chruby/chruby.sh
-source /usr/local/share/chruby/auto.sh
-alias rubies='chruby'
+if [[ -f /usr/local/share/chruby/chruby.sh ]]; then
+  source /usr/local/share/chruby/chruby.sh
+  source /usr/local/share/chruby/auto.sh
+  alias rubies='chruby'
+fi
 
 if command -v pyenv &> /dev/null; then
   eval "$(pyenv init -)"
