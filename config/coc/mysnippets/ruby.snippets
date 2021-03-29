@@ -1361,7 +1361,7 @@ snippet mthrow
 endsnippet
 
 snippet desc
-describe ${1:`substitute(substitute(vim_snippets#Filename(), '_spec$', '', ''), '\(_\|^\)\(.\)', '\u\2', 'g')`} do
+describe ${1:`!p snip.rv = snip.basename.title().replace('_', '')`} do
 	${0}
 end
 endsnippet
