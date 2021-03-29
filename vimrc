@@ -180,6 +180,8 @@ augroup END
 
 " gutentags
 let g:gutentags_cache_dir = expand('~/.cache/tags')
+let g:gutentags_add_default_project_roots = 0
+let g:gutentags_project_root = ['package.json', '.git']
 let g:gutentags_ctags_exclude = [
   \ '*.git', '*.svg', '*.hg',
   \ '*/tests/*',
@@ -193,7 +195,7 @@ let g:gutentags_ctags_exclude = [
   \ 'compiled',
   \ 'docs',
   \ 'example',
-  \ 'bundle',
+  \ '*bundle',
   \ 'vendor',
   \ '*.md',
   \ '*-lock.json',
