@@ -1,6 +1,5 @@
 export EDITOR=vim
 export BC_ENV_ARGS=$HOME/.bcrc
-# export SHELL=/usr/local/bin/zsh
 export LESS=-Ri
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
@@ -11,8 +10,7 @@ export RUBY_CONFIGURE_OPTS="--with-openssl-dir=/usr/local/opt/openssl@1.1"
 
 # go
 export GOPATH=$HOME/go
-export GOROOT=/usr/local/opt/go/libexec
-export GOBIN=$GOPATH/bin
+export GOBIN=/usr/local/go/bin
 
 # groovy
 export GROOVY_HOME=/usr/local/opt/groovy/libexec
@@ -24,13 +22,15 @@ export GROOVY_HOME=/usr/local/opt/groovy/libexec
 export PKG_CONFIG_PATH="/usr/local/opt/postgresql@12/lib/pkgconfig"
 
 # path
-PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/sbin
+# PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/sbin
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
 # PATH=$PATH:/usr/local/opt/qt@5.5/bin
-PATH=/usr/local/opt/postgresql@12/bin:$PATH
-PATH=/usr/local/opt/openssl/bin:$PATH
-PATH=/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/bin:$PATH
+# PATH=/usr/local/opt/postgresql@12/bin:$PATH
+# PATH=/usr/local/opt/openssl/bin:$PATH
+# PATH=/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/bin:$PATH
 PATH=$GOBIN:$PATH
-export PATH=$HOME/bin:$PATH
+PATH=$HOME/bin:$PATH
+export PATH=$PATH
 
 # load function dirs into fpath
 if [[ -d $HOME/.functions ]]; then

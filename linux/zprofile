@@ -48,6 +48,6 @@ fi
 
 # use neovim if installed
 if type nvim &> /dev/null; then
-    alias vim='nvim'
+  alias vim='nvim'
 fi
 # vim:ft=zsh:
