@@ -378,11 +378,11 @@ end
 endsnippet
 
 snippet req require
-require '${1}'
+require "${1}"
 endsnippet
 
 snippet reqr
-require_relative '${1}'
+require_relative "${1}"
 endsnippet
 
 snippet #
@@ -1379,7 +1379,7 @@ end
 endsnippet
 
 snippet cont
-context '${1:message}' do
+context "${1:message}" do
 	${0}
 end
 endsnippet
@@ -1441,7 +1441,7 @@ it_behaves_like ${0:'shared examples name'}
 endsnippet
 
 snippet it
-it '${1:spec_name}' do
+it "${1:spec_name}" do
 	${0}
 end
 endsnippet
