@@ -28,8 +28,9 @@ export AWS_PAGER=""
 export AWS_PROFILE=intellum
 
 # ansible
-export ANSIBLE_VAULT_PASSWORD_FILE=./.vault_pass
+export ANSIBLE_VAULT_PASSWORD_FILE=./.vault.pass
 export ANSIBLE_REMOTE_USER=intellumadmin
+export no_proxy=*
 
 # terraform
 export NEW_RELIC_REGION="US"
