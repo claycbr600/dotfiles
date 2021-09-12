@@ -1,0 +1,5 @@
+Host *
+  ServerAliveInterval 30
+  ServerAliveCountMax 120
+  StrictHostKeyChecking no
+  ForwardAgent yes
