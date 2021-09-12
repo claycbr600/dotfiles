@@ -6,34 +6,20 @@ export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
 # ruby
-export RUBYOPT="-W0"
-export RUBY_CONFIGURE_OPTS="--with-openssl-dir=/usr/local/opt/openssl@1.1"
+# export RUBYOPT="-W0"
+# export RUBY_CONFIGURE_OPTS="--with-openssl-dir=/usr/local/opt/openssl@1.1"
 
 # go
 export GOPATH=$HOME/go
 export GOROOT=/usr/local/opt/go/libexec
 export GOBIN=$GOPATH/bin
 
-# groovy
-export GROOVY_HOME=/usr/local/opt/groovy/libexec
-
-# java
-export JAVA_HOME=$(/usr/libexec/java_home)
-
 # postgres
 export PKG_CONFIG_PATH="/usr/local/opt/postgresql@12/lib/pkgconfig"
 
-# aws
-export AWS_PAGER=""
-export AWS_PROFILE=intellum
-
 # ansible
 export ANSIBLE_VAULT_PASSWORD_FILE=./.vault.pass
-export ANSIBLE_REMOTE_USER=intellumadmin
 export no_proxy=*
-
-# terraform
-export NEW_RELIC_REGION="US"
 
 # path
 PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/sbin

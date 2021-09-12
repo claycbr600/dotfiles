@@ -24,7 +24,6 @@ alias todo='ultralist'
 alias pg.server='pg_ctl -D /usr/local/var/postgresql@12'
 alias psql='psql -P pager=off'
 alias brew='arch -x86_64 brew'
-alias tf='cd ~/work/devops/terraform; pwd'
 
 # ruby aliases
 alias be='bundle exec'
