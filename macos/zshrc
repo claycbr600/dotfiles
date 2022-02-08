@@ -61,6 +61,7 @@ plugins=(
   docker
   docker-compose
   git
+  kubectl
   terraform
   tmux
   vi-mode
