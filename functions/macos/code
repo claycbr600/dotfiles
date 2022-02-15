@@ -1,0 +1,9 @@
+if [[ -n $1 ]]; then
+  tma code $1 "cd ~/code/$1 \
+    && tmux splitw -h -l 90 \
+    && tmux selectp -t 0"
+else
+  cd ~/code
+  pwd
+fi
+# vim:ft=zsh:
