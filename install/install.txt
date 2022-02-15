@@ -1,3 +1,4 @@
+0. install iterm2
 1. install zsh
 2. install oh-my-zsh
 3. install oh-my-zsh custom plugins
