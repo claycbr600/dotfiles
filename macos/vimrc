@@ -247,7 +247,7 @@ inoremap <silent><expr> <TAB>
 \   <SID>check_back_space() ? "\<TAB>" :
 \   coc#refresh()
 
-let g:python3_host_prog = '/usr/local/bin/python3'
+let g:python3_host_prog = '/opt/homebrew/bin/python3'
 
 function! s:check_back_space() abort
   let col = col('.') - 1
