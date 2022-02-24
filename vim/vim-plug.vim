@@ -34,10 +34,6 @@ Plug 'unblevable/quick-scope'
 Plug 'vim-ruby/vim-ruby'
 
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
-" :CocInstall coc-snippets
-" :CocInstall coc-solargraph
-" npm i -g bash-language-server
-" npm i -g dockerfile-language-server-nodejs
 
 " ruby text objects
 Plug 'kana/vim-textobj-user'

@@ -10,3 +10,23 @@
     ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 4. link dotfiles
 5. link functions
+6. install nvim
+  brew install neovim
+7. install vim plug/plugins
+  curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+8. chruby
+  brew install chruby
+  brew install ruby-install
+9. configure coc.nvim
+  " :CocInstall coc-snippets
+  " :CocInstall coc-solargraph
+  " :CocInstall coc-json
+  " :CocInstall coc-pyright
+  " npm i -g bash-language-server
+  " npm i -g dockerfile-language-server-nodejs
+
+10. install go
+  brew install go
+  mkdir -p $HOME/go/{bin,src,pkg}
+11. install ultralist
