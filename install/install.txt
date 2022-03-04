@@ -19,12 +19,19 @@
   brew install chruby
   brew install ruby-install
 9. configure coc.nvim
+  let g:coc_global_extensions = ['coc-snippets', 'coc-solargraph']
   " :CocInstall coc-snippets
   " :CocInstall coc-solargraph
   " :CocInstall coc-json
   " :CocInstall coc-pyright
-  " npm i -g bash-language-server
-  " npm i -g dockerfile-language-server-nodejs
+
+  " set up language servers
+  yarn global add bash-language-server
+  yarn global add dockerfile-language-server-nodejs
+  go install golang.org/x/tools/gopls@latest
+  brew install hashicorp/tap/terraform-ls
+
+  ln -s ~/.dotfiles/config/coc/mysnippets ~/.config/coc/
 
 10. install go
   brew install go
