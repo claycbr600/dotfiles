@@ -37,3 +37,6 @@
   brew install go
   mkdir -p $HOME/go/{bin,src,pkg}
 11. install ultralist
+
+12. install ctags
+brew install universal-ctags
