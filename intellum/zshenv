@@ -53,9 +53,12 @@ if [[ -d $HOME/.functions ]]; then
   export fpath
 fi
 
-if [[ -f $HOME/.local/keys ]]; then
-  source $HOME/.local/keys
-fi
+# locals
+for file in keys aliases; do
+  if [[ -f $HOME/.local/$file ]]; then
+    source $HOME/.local/$file
+  fi
+done
 
 # irb
 export IRBRC=~/.irbrc
