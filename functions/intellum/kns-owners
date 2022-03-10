@@ -1,4 +1,5 @@
 for qa_env in $(kubens | grep qa-env); do
+  echo '---'
   kubectl describe ns $qa_env | grep -A 2 'Name:'
 done
 # vim:ft=zsh:
