@@ -102,6 +102,7 @@ kres(){
 }
 
 # Rollout management.
+alias krrd='kubectl rollout restart deployment'
 alias kgrs='kubectl get rs'
 alias krh='kubectl rollout history'
 alias kru='kubectl rollout undo'
