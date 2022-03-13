@@ -20,7 +20,7 @@ alias kca='_kca(){ kubectl "$@" --all-namespaces;  unset -f _kca; }; _kca'
 alias kaf='kubectl apply -f'
 
 # Drop into an interactive terminal on a container
-alias keti='kubectl exec -ti'
+alias keti='kubectl exec -t -i'
 
 # Manage configuration quickly to switch contexts between local, dev ad staging.
 alias kcuc='kubectl config use-context'
@@ -163,6 +163,12 @@ alias kgdsw='kgds --watch'
 alias keds='kubectl edit daemonset'
 alias kdds='kubectl describe daemonset'
 alias kdelds='kubectl delete daemonset'
+
+# jobs
+alias kgj='kubectl get jobs'
+alias kej='kubectl edit job'
+alias kdj='kubectl describe job'
+alias kdelj='kubectl delete job'
 
 # CronJob management.
 alias kgcj='kubectl get cronjob'
