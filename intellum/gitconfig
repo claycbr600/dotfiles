@@ -1,0 +1,22 @@
+[user]
+	name = Charlie McCain
+	email = cmccain@intellum.com
+[push]
+	default = simple
+[alias]
+  co = checkout
+  ci = commit
+  st = status
+  br = branch
+  up = pull
+  hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+[core]
+	editor = vim
+	excludesfile = ~/.gitignore
+	pager = cat
+[color]
+	ui = true
+[rerere]
+	enabled = true
+[pull]
+	rebase = false
