@@ -1,6 +1,6 @@
-local -r separator="$1"
+local -r separator=$1
 shift
-local -ar values=("$@")
+local -ar values=($@)
 
 local out=""
 for (( i=1; i <= ${#values[@]}; i++ )); do
@@ -10,5 +10,5 @@ for (( i=1; i <= ${#values[@]}; i++ )); do
   out="${out}${values[i]}"
 done
 
-echo -n "$out"
+echo -n $out
 # vim:ft=zsh:
