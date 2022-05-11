@@ -1,0 +1,6 @@
+#compdef repos
+
+list=$(ls ~/work/repos)
+_arguments \
+  "1: :($list)"
+# vim:ft=zsh:
