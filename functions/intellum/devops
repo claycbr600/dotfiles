@@ -1,6 +1,6 @@
 if [[ -n $1 ]]; then
   local dir=${1:l}
-  tma devops $dir "cd ~/work/devops/$dir \
+  tma devops $dir "cd ~/work/devops/$1 \
     && tmux splitw -h -l 90 \
       'echo \"git fetch origin\" && git fetch origin && zsh -l || zsh -l' \
     && tmux selectp -t 0"

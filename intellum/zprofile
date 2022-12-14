@@ -18,6 +18,9 @@ unalias run-help 2> /dev/null
 autoload run-help
 alias help='run-help'
 
+# project aliases
+alias gha='cd ~/work/repos/gh-actions; pwd'
+
 # command aliases
 alias umount='diskutil unmount'
 alias todo='ultralist'
@@ -26,6 +29,7 @@ alias psql='psql -P pager=off'
 alias tf='cd ~/work/devops/terraform; pwd'
 alias ans='cd ~/work/devops/Ansible; pwd'
 alias gbrc='gbr | sort | grep charlie'
+alias docs='cd ~/work/docs; pwd'
 
 # ruby aliases
 alias be='bundle exec'

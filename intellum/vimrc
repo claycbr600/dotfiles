@@ -27,6 +27,9 @@ au BufNewFile,BufRead Jenkinsfile* setf Groovy
 au BufNewFile,BufRead Dockerfile,Dockerfile.*,*.Dockerfile setf dockerfile
 au BufEnter * if &filetype == "" | setlocal ft=text | endif
 
+" Set scripts to be executable from the shell
+au BufWritePost * if getline(1) =~ "^#!" | silent !chmod +x <afile> | endif
+
 set cursorline
 hi clear CursorLine
 hi CursorLineNr term=bold cterm=bold ctermfg=012 gui=bold
@@ -88,6 +91,9 @@ nnoremap k gk
 nnoremap 0 g0
 nnoremap $ g$
 nnoremap ^ g^
+
+" autoswap
+let g:autoswap_detect_tmux = 1
 
 " buffers
 let g:buffergator_suppress_keymaps = 1
