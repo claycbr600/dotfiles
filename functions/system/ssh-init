@@ -1,0 +1,5 @@
+if ! ssh-add -l &> /dev/null; then
+  ssh-add 2> /dev/null
+  return
+fi
+# vim:ft=zsh:
