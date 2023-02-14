@@ -1,0 +1,16 @@
+snippet dvar "declare template var"
+{
+	"type": "${1:type}",
+	"defaultValue": ${2:defaultValue},
+	"description": "${3:description}",
+	"name": "${4:name}"
+}$0
+endsnippet
+
+snippet $ "expression"
+${ $0 }
+endsnippet
+
+snippet var "template var"
+templateVariables.${1:varname}
+endsnippet
