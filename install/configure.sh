@@ -17,7 +17,7 @@ else
   sleep 3
 
   echo "linking zsh config files..."
-  files=(zprofile zshenv)
+  files=(zlogin zshenv)
   for f in "${files[@]}"; do
     echo "~/.dotfiles/$os/$f -> .$f"
     ln -sf ~/.dotfiles/$os/$f ~/.$f
@@ -65,7 +65,7 @@ else
   echo "installing zsh plugins"
   git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
   git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
-  
+
   echo "linking zsh custom plugins"
   files=(git terraform tmux vi-mode)
   for f in "${files[@]}"; do
