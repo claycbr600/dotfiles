@@ -27,6 +27,9 @@ au BufNewFile,BufRead Jenkinsfile* setf Groovy
 au BufNewFile,BufRead Dockerfile,Dockerfile.*,*.Dockerfile setf dockerfile
 au BufEnter * if &filetype == "" | setlocal ft=text | endif
 
+" Set scripts to be executable from the shell
+au BufWritePost * if getline(1) =~ "^#!" | silent !chmod +x <afile> | endif
+
 set cursorline
 hi clear CursorLine
 hi CursorLineNr term=bold cterm=bold ctermfg=012 gui=bold
@@ -88,6 +91,9 @@ nnoremap k gk
 nnoremap 0 g0
 nnoremap $ g$
 nnoremap ^ g^
+
+" autoswap
+let g:autoswap_detect_tmux = 1
 
 " buffers
 let g:buffergator_suppress_keymaps = 1
@@ -240,20 +246,20 @@ let g:tagbar_autoclose = 1
 nnoremap <Leader>t :TagbarToggle<CR>
 
 " coc.nvim
+function! CheckBackspace() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
 inoremap <silent><expr> <TAB>
 \ pumvisible() ? coc#_select_confirm() :
 \   coc#expandableOrJumpable() ?
 \   "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
-\   <SID>check_back_space() ? "\<TAB>" :
+\   CheckBackspace() ? "\<TAB>" :
 \   coc#refresh()
 
 let g:python3_host_prog = '/usr/local/bin/python3'
 let g:coc_node_path = '/usr/local/bin/node'
-
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
 
 let g:coc_snippet_next = '<TAB>'
 " imap <C-O> <Esc>:call coc#util#float_hide()<CR>a

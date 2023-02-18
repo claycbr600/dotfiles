@@ -35,6 +35,9 @@ export no_proxy=*
 # terraform
 export NEW_RELIC_REGION="US"
 
+# gcloud
+export USE_GKE_GCLOUD_AUTH_PLUGIN=True
+
 # path
 PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/sbin
 PATH=/usr/local/opt/ansible@2.9/bin:$PATH

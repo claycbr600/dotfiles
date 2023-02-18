@@ -1,11 +1,10 @@
 if [[ -n $1 ]]; then
-  local dir=${1:l}
-  tma devops $dir "cd ~/work/devops/$1 \
+  tma repos $1 "cd ~/work/repos/$1 \
     && tmux splitw -h -l 90 \
       'echo \"git fetch origin\" && git fetch origin && zsh -l || zsh -l' \
     && tmux selectp -t 0"
 else
-  cd ~/work/devops
+  cd ~/work/repos
   pwd
 fi
 # vim:ft=zsh:

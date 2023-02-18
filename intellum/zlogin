@@ -18,6 +18,9 @@ unalias run-help 2> /dev/null
 autoload run-help
 alias help='run-help'
 
+# project aliases
+alias gha='cd ~/work/repos/gh-actions; pwd'
+
 # command aliases
 alias umount='diskutil unmount'
 alias todo='ultralist'
@@ -26,6 +29,7 @@ alias psql='psql -P pager=off'
 alias tf='cd ~/work/devops/terraform; pwd'
 alias ans='cd ~/work/devops/Ansible; pwd'
 alias gbrc='gbr | sort | grep charlie'
+alias docs='cd ~/work/docs; pwd'
 
 # ruby aliases
 alias be='bundle exec'
@@ -38,7 +42,7 @@ if [[ -f /usr/local/share/chruby/chruby.sh ]]; then
   source /usr/local/share/chruby/chruby.sh
   source /usr/local/share/chruby/auto.sh
   alias rubies='chruby'
-  chruby 2.7.2
+  chruby 2.7.5
 fi
 
 if command -v pyenv &> /dev/null; then
@@ -51,6 +55,9 @@ if [[ -d $HOME/.functions ]]; then
     autoload -Uz $(basename $fn)
   done
 fi
+
+# ssh init
+ssh-init
 
 # use neovim if installed
 if type nvim &> /dev/null; then
