@@ -11,7 +11,7 @@
   up = pull
   hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
 [core]
-	editor = vim
+	editor = nvim
 	excludesfile = ~/.gitignore
 	pager = cat
 [color]
