@@ -30,6 +30,9 @@ alias bes='bundle exec spring'
 alias rc='echo bundle exec spring rails console; bes rails c'
 alias rs='echo bundle exec spring rails server; bes rails s'
 
+# path aliases
+alias cka='cd ~/Documents/library/devops/k8s/certs/cka; pwd'
+
 # chruby
 if [[ -f /opt/homebrew/opt/chruby/share/chruby/chruby.sh ]]; then
   source /opt/homebrew/opt/chruby/share/chruby/chruby.sh
