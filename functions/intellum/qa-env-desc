@@ -1,0 +1,9 @@
+kubectx arn:aws:eks:us-east-2:373501196998:cluster/qa-envs-1
+
+for qa_env in $(kubens | grep qa-env | sort -V); do
+  echo '----'
+  kubectl describe ns $qa_env
+done > ~/tmp/qa-env.txt
+
+echo output to ~/tmp/qa-env.txt
+# vim:ft=zsh:

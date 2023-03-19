@@ -1,0 +1,7 @@
+local -r qa_env=$1
+local -r owner=$2
+local -r email=$3
+
+kubectl label --overwrite ns $qa_env owner=$owner
+kubectl annotate --overwrite ns $qa_env owner_email=$email
+# vim:ft=zsh:
