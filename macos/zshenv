@@ -11,13 +11,8 @@ export GOROOT="/opt/homebrew/opt/go/libexec"
 export GOBIN=$GOPATH/bin
 
 # path
-PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/sbin
-# PATH=/usr/local/opt/ansible@2.9/bin:$PATH
-# PATH=/usr/local/opt/postgresql@12/bin:$PATH
-# PATH=/usr/local/opt/openssl/bin:$PATH
-# PATH=/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/bin:$PATH
-# PATH=/usr/local/opt/mongodb-community@4.0/bin:$PATH
-PATH="/opt/homebrew/bin:/opt/homebrew/sbin${PATH+:$PATH}"
+PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+PATH=/opt/homebrew/bin:/opt/homebrew/sbin:$PATH
 PATH=$GOBIN:$PATH
 export PATH=$HOME/bin:$PATH
 
@@ -28,17 +23,6 @@ export SHELL=/opt/homebrew/bin/zsh
 export LESS=-Ri
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
-
-# ruby
-# export RUBYOPT="-W0"
-# export RUBY_CONFIGURE_OPTS="--with-openssl-dir=/usr/local/opt/openssl@1.1"
-
-# postgres
-# export PKG_CONFIG_PATH="/usr/local/opt/postgresql@12/lib/pkgconfig"
-
-# ansible
-# export ANSIBLE_VAULT_PASSWORD_FILE=./.vault.pass
-# export no_proxy=*
 
 # load function dirs into fpath
 if [[ -d $HOME/.functions ]]; then
