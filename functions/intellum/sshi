@@ -1,0 +1,19 @@
+: "${user:=ubuntu}"
+
+while getopts 'u:h' opt; do
+  case "$opt" in
+    u)
+      user="$OPTARG"
+      ;;
+    ?|h)
+      echo "Usage: $(basename $0) [-u arg]"
+      exit 1
+      ;;
+  esac
+done
+shift "$(($OPTIND -1))"
+
+hostname=$1
+echo ssh -i ~/.ssh/devops.pem $user@$hostname
+ssh -i ~/.ssh/devops.pem $user@$hostname
+# vim:ft=zsh:
