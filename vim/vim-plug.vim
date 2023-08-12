@@ -1,6 +1,5 @@
 call plug#begin('~/.vim/plugged')
 
-Plug 'buztard/vim-rel-jump'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'christoomey/vim-tmux-runner'
 Plug 'claycbr600/vim-buffergator'

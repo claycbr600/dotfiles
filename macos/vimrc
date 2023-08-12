@@ -6,7 +6,7 @@ set foldlevel=2
 set hidden
 set ignorecase
 set incsearch
-set number relativenumber
+set number
 set pastetoggle=<F2>
 set ruler
 set shiftround
@@ -83,6 +83,8 @@ nnoremap <Leader>p "*p
 
 " movement
 nnoremap <CR> zt
+nnoremap <expr> j v:count == 0 ? 'gj' : 'j'
+nnoremap <expr> k v:count == 0 ? 'gk' : 'k'
 nnoremap 0 g0
 nnoremap $ g$
 nnoremap ^ g^
@@ -98,18 +100,6 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
-
-" tabs
-nnoremap <Leader>1 1gt
-nnoremap <Leader>2 2gt
-nnoremap <Leader>3 3gt
-nnoremap <Leader>4 4gt
-nnoremap <Leader>5 5gt
-nnoremap <Leader>6 6gt
-nnoremap <Leader>7 7gt
-nnoremap <Leader>8 8gt
-nnoremap <Leader>9 9gt
-nnoremap <Leader>0 10gt
 
 " netrw
 let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
