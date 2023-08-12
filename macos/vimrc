@@ -6,7 +6,7 @@ set foldlevel=2
 set hidden
 set ignorecase
 set incsearch
-set number
+set number relativenumber
 set pastetoggle=<F2>
 set ruler
 set shiftround
@@ -83,8 +83,6 @@ nnoremap <Leader>p "*p
 
 " movement
 nnoremap <CR> zt
-nnoremap <expr> j v:count == 0 ? 'gj' : 'j'
-nnoremap <expr> k v:count == 0 ? 'gk' : 'k'
 nnoremap 0 g0
 nnoremap $ g$
 nnoremap ^ g^
