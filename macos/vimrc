@@ -83,8 +83,6 @@ nnoremap <Leader>p "*p
 
 " movement
 nnoremap <CR> zt
-nnoremap j gj
-nnoremap k gk
 nnoremap 0 g0
 nnoremap $ g$
 nnoremap ^ g^
@@ -244,13 +242,13 @@ inoremap <silent><expr> <TAB>
 \ pumvisible() ? coc#_select_confirm() :
 \   coc#expandableOrJumpable() ?
 \   "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
-\   <SID>check_back_space() ? "\<TAB>" :
+\   CheckBackspace() ? "\<TAB>" :
 \   coc#refresh()
 
 let g:python3_host_prog = '/opt/homebrew/bin/python3'
 let g:coc_global_extensions = ['coc-json', 'coc-pyright', 'coc-snippets', 'coc-solargraph']
 
-function! s:check_back_space() abort
+function! CheckBackspace() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
