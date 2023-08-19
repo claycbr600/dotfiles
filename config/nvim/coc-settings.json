@@ -26,6 +26,6 @@
     }
   },
   "solargraph.commandPath": "~/.rbenv/shims/solargraph",
-  "snippets.ultisnips.directories": ["~/.config/coc/mysnippets"],
+  "snippets.ultisnips.directories": ["~/.config/coc/mysnippets", "~/.vim/plugged/vim-snippets/UltiSnips"],
   "suggest.languageSourcePriority": 50
 }
