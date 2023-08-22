@@ -73,11 +73,7 @@ nnoremap o ox<BS>
 nnoremap O Ox<BS>
 
 " yank
-" del to null register
 nnoremap Y y$
-nnoremap yp "0p
-nnoremap yP "0P
-nnoremap <Leader>k "_d
 
 " copy to clipboard
 vmap <Leader>y "*y
@@ -86,8 +82,6 @@ nnoremap <Leader>p "*p
 
 " movement
 nnoremap <CR> zt
-nnoremap j gj
-nnoremap k gk
 nnoremap 0 g0
 nnoremap $ g$
 nnoremap ^ g^
@@ -106,18 +100,6 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
-
-" tabs
-nnoremap <Leader>1 1gt
-nnoremap <Leader>2 2gt
-nnoremap <Leader>3 3gt
-nnoremap <Leader>4 4gt
-nnoremap <Leader>5 5gt
-nnoremap <Leader>6 6gt
-nnoremap <Leader>7 7gt
-nnoremap <Leader>8 8gt
-nnoremap <Leader>9 9gt
-nnoremap <Leader>0 10gt
 
 " netrw
 let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
