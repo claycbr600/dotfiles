@@ -70,15 +70,11 @@ nnoremap o ox<BS>
 nnoremap O Ox<BS>
 
 " yank
-" del to null register
 nnoremap Y y$
-nnoremap yp "0p
-nnoremap yP "0P
-nnoremap <Leader>k "_d
 
 " copy to clipboard
-vmap <Leader>y "*y
-vmap <Leader>d "*d
+noremap <Leader>y "*y
+noremap <Leader>d "*d
 nnoremap <Leader>p "*p
 
 " movement
