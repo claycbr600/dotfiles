@@ -1,0 +1,5 @@
+vendor
+.bundle
+/completions
+.env
+domain_manager_export
