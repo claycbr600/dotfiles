@@ -84,7 +84,6 @@ noremap <Leader>d "*d
 nnoremap <Leader>p "*p
 
 " movement
-nnoremap <CR> zt
 nnoremap 0 g0
 nnoremap $ g$
 nnoremap ^ g^
