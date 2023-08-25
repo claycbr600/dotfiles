@@ -95,13 +95,16 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
+" search command line mode
+cnoremap <C-p> <Up>
+cnoremap <C-n> <Down>
+
 " netrw
 let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
 " map <Leader>ef :call UltiSnips#RefreshSnippets()<CR>
 map <Leader>ew :e %:h<CR>
 map <Leader>es :sp %:h<CR>
 map <Leader>ev :vs %:h<CR>
-map <Leader>et :tabe %:h<CR>
 
 " set line numbers for editor windows
 let g:netrw_bufsettings = 'noma nomod nu nobl nowrap ro'
