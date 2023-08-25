@@ -4,6 +4,7 @@ set cindent
 set expandtab
 set foldlevel=2
 set hidden
+set history=100
 set ignorecase
 set incsearch
 set number relativenumber
@@ -40,10 +41,12 @@ hi CocErrorSign guifg=#d1666a
 hi CocFloating ctermbg=5
 hi CocHintSign guifg=Blue
 hi CocWarningSign guifg=#d1cd66
-" hi CocInfoSign guibg=#353b45
 
 let g:highlightedyank_highlight_duration = 300
 let g:go_highlight_trailing_whitespace_error=0
+
+" disable editorconfig
+let g:editorconfig = v:false
 
 " matchit - jump between matching keywords
 runtime macros/matchit.vim
@@ -76,8 +79,8 @@ nnoremap O Ox<BS>
 nnoremap Y y$
 
 " copy to clipboard
-vmap <Leader>y "*y
-vmap <Leader>d "*d
+noremap <Leader>y "*y
+noremap <Leader>d "*d
 nnoremap <Leader>p "*p
 
 " movement
@@ -244,8 +247,7 @@ let g:python3_host_prog = '/usr/local/bin/python3'
 let g:coc_node_path = '/usr/local/bin/node'
 
 let g:coc_snippet_next = '<TAB>'
-" imap <C-O> <Esc>:call coc#util#float_hide()<CR>a
-imap <C-O> <Esc>:call coc#float#close_all()<CR>a
+imap <C-k> <Esc>:call coc#float#close_all()<CR>a
 
 " vim-go
 let g:go_def_mapping_enabled = 0
