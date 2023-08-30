@@ -239,8 +239,6 @@ function! CheckBackspace() abort
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
-imap <C-k> <Esc>:call coc#float#close_all()<CR>a
-
 " vim-go
 let g:go_def_mapping_enabled = 0
 let g:go_fmt_command = "goimports"

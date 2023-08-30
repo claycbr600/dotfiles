@@ -249,9 +249,6 @@ inoremap <silent><expr> <TAB>
 let g:python3_host_prog = '/usr/local/bin/python3'
 let g:coc_node_path = '/usr/local/bin/node'
 
-let g:coc_snippet_next = '<TAB>'
-imap <C-k> <Esc>:call coc#float#close_all()<CR>a
-
 " vim-go
 let g:go_def_mapping_enabled = 0
 let g:go_fmt_command = "goimports"
