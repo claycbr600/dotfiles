@@ -100,7 +100,6 @@ cnoremap <C-n> <Down>
 
 " netrw
 let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
-" map <Leader>ef :call UltiSnips#RefreshSnippets()<CR>
 map <Leader>ew :e %:h<CR>
 map <Leader>es :sp %:h<CR>
 map <Leader>ev :vs %:h<CR>
