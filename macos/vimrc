@@ -7,7 +7,6 @@ set hidden
 set ignorecase
 set incsearch
 set number relativenumber
-set pastetoggle=<F2>
 set ruler
 set shiftround
 set shiftwidth=2
@@ -76,6 +75,7 @@ nnoremap Y y$
 noremap <Leader>y "*y
 noremap <Leader>d "*d
 nnoremap <Leader>p "*p
+nnoremap <Leader>P "*P
 
 " movement
 nnoremap 0 g0
@@ -97,6 +97,9 @@ nnoremap <C-H> <C-W><C-H>
 " search command line mode
 cnoremap <C-p> <Up>
 cnoremap <C-n> <Down>
+
+" nohlsearch
+nnoremap <silent> <C-n> :nohlsearch<CR>
 
 " netrw
 let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
