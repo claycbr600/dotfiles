@@ -4,6 +4,7 @@ set cindent
 set expandtab
 set foldlevel=2
 set hidden
+set history=100
 set ignorecase
 set incsearch
 set number relativenumber
