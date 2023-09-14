@@ -6,7 +6,6 @@ Plug 'claycbr600/vim-buffergator'
 Plug 'claycbr600/vim-rel-jump'
 Plug 'claycbr600/vim-terraform'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-Plug 'gioele/vim-autoswap'
 Plug 'honza/vim-snippets'
 Plug 'itchyny/lightline.vim'
 Plug 'junegunn/vim-easy-align'
