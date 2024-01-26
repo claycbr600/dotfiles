@@ -18,6 +18,7 @@ alias cp='cp -i'
 alias mv='mv -i'
 alias pgrep='pgrep -l'
 alias sudo='sudo -i'
+alias tginit='tg providers lock -platform=darwin_arm64 -platform=darwin_amd64 -platform=linux_amd64'
 
 # project aliases
 alias gha='cd ~/work/repos/gh-actions; pwd'
