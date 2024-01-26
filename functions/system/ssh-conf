@@ -1,12 +1,12 @@
 # print or update HostName for ssh/config entry
 # 1. print all hosts
-#   sshconf
+#   ssh-conf
 # 2. print HostName
-#   sshconf jenkins
+#   ssh-conf jenkins
 # 3. change entire HostName
-#   sshconf jenkins 10.103.8.24
+#   ssh-conf jenkins 10.103.8.24
 # 4. change last octet of HostName
-#   sshconf jenkins 99
+#   ssh-conf jenkins 99
 local -r configfile="$HOME/.ssh/config"
 local -r host=$1
 local -r ip=$2

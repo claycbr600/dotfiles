@@ -1,8 +1,5 @@
 if [[ -n $1 ]]; then
-  tma repos $1 "cd ~/work/repos/$1 \
-    && tmux splitw -h -l 90 \
-      'echo \"git fetch origin\" && git fetch origin && zsh -l || zsh -l' \
-    && tmux selectp -t 0"
+  tma repos $1 "cd ~/work/repos/$1"
 else
   cd ~/work/repos
   pwd
