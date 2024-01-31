@@ -1,5 +1,9 @@
 if [[ -n $1 ]]; then
-  tma repos $1 "cd ~/work/repos/$1"
+  if [[ $dir = - ]]; then
+    tma repos repos "cd ~/work/repos"
+  else
+    tma repos $1 "cd ~/work/repos/$1"
+  fi
 else
   cd ~/work/repos
   pwd

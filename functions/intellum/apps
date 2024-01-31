@@ -1,5 +1,9 @@
 if [[ -n $1 ]]; then
-  tma apps $1 "cd ~/work/apps/$1"
+  if [[ $dir = - ]]; then
+    tma apps apps "cd ~/work/apps"
+  else
+    tma apps $1 "cd ~/work/apps/$1"
+  fi
 else
   cd ~/work/apps
   pwd

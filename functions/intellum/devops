@@ -1,6 +1,10 @@
 if [[ -n $1 ]]; then
   local dir=${1:l}
-  tma devops $dir "cd ~/work/devops/$1"
+  if [[ $dir = - ]]; then
+    tma devops devops "cd ~/work/devops"
+  else
+    tma devops $dir "cd ~/work/devops/$1"
+  fi
 else
   cd ~/work/devops
   pwd
