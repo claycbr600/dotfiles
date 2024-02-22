@@ -35,6 +35,7 @@ alias rs='echo bundle exec spring rails server; bes rails s'
 # path aliases
 alias cka='cd ~/Documents/library/devops/k8s/certs/cka; pwd'
 alias hsa='cd ~/Documents/charlie/work/intellum/hsa; pwd'
+alias docs='cd ~/Documents/charlie/docs; pwd'
 
 if command -v pyenv &> /dev/null; then
   eval "$(pyenv init -)"
