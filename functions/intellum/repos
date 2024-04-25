@@ -1,4 +1,5 @@
 if [[ -n $1 ]]; then
+  local dir=${1:l}
   if [[ $dir = - ]]; then
     tma repos repos "cd ~/work/repos"
   else

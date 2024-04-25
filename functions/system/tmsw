@@ -1,0 +1,24 @@
+# tmsw [name]
+# set tmux window name
+#
+# tmsw foo
+sys::in_tmux() {
+  [[ -n $TMUX ]]
+}
+
+sys::set_window_name() {
+  local name=${1:-$(basename $PWD)}
+  tmux rename-window $name
+}
+
+# exit if not in tmux
+if ! sys::in_tmux; then
+  echo 'not in a tmux session'
+  return
+else
+  sys::set_window_name $@
+fi
+
+unset -f sys::in_tmux \
+  sys::set_window_name
+# vim:ft=zsh:

@@ -26,7 +26,7 @@ au FileType eruby.yaml setlocal commentstring=#\ %s
 au FileType Jenkinsfile setlocal commentstring=//\ %s
 au BufNewFile,BufRead Jenkinsfile* setf Groovy
 au BufNewFile,BufRead Dockerfile,Dockerfile.*,*.Dockerfile setf dockerfile
-au BufEnter * if &filetype == "" | setlocal ft=text | endif
+au BufEnter * if &filetype == "" || &filetype == "markdown" | setlocal ft=text | endif
 
 " Set scripts to be executable from the shell
 au BufWritePost * if getline(1) =~ "^#!" | silent !chmod +x <afile> | endif
@@ -305,3 +305,6 @@ autocmd BufReadPre *
 \ | if f > 100000 || f == -2
 \ | let b:copilot_enabled = v:false
 \ | endif
+
+" neovim
+" let g:ruby_host_prog = "/Users/cmccain/.rbenv/shims/neovim-ruby-host"
