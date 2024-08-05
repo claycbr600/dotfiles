@@ -32,6 +32,7 @@ Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-vinegar'
 Plug 'unblevable/quick-scope'
 Plug 'vim-ruby/vim-ruby'
+Plug 'yasuhiroki/github-actions-yaml.vim'
 
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 
