@@ -40,9 +40,7 @@ alias docs='cd ~/work/docs; pwd'
 
 # ruby aliases
 alias be='bundle exec'
-alias bes='bundle exec spring'
-alias rc='echo bundle exec spring rails console; bes rails c'
-alias rs='echo bundle exec spring rails server; bes rails s'
+alias br='bin/rails'
 
 if command -v pyenv &> /dev/null; then
   eval "$(pyenv init -)"

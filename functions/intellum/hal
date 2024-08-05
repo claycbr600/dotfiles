@@ -1,0 +1,9 @@
+local -r context=$(kubectx -c)
+
+if [[ $context != "gke_useful-proposal-454_us-east4-a_foundation" ]]; then
+  kubectx gke_useful-proposal-454_us-east4-a_foundation
+else
+  echo "Already in the correct context: $context"
+fi
+
+~/work/devops/deployments/spinnaker/halyard/bin/hal
