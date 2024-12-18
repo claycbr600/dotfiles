@@ -16,10 +16,16 @@ set smartcase
 set splitbelow
 set splitright
 set tabstop=2
+set notermguicolors
+
+colorscheme vim
 
 set nocompatible                " running vim, not vi
 source ~/.vim/vim-plug.vim      " manage vim bundles
 syntax on                       " enable syntax highlighting
+filetype on
+filetype plugin on
+filetype indent on
 
 " autocmd
 au FileType eruby.yaml setlocal commentstring=#\ %s
