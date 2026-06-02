@@ -93,6 +93,7 @@ nnoremap <Leader>P "*P
 " movement
 nnoremap 0 g0
 nnoremap $ g$
+vnoremap $ g_
 nnoremap ^ g^
 nnoremap <C-d> <C-d>zz
 nnoremap <C-u> <C-u>zz

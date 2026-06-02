@@ -4,3 +4,4 @@ vendor
 .env
 domain_manager_export
 /deployments/gh-actions/arc/files/
+/.claude
