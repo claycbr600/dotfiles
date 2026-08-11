@@ -10,6 +10,7 @@ set incsearch
 set noswapfile
 set number relativenumber
 set ruler
+set shell=/bin/zsh
 set shiftround
 set shiftwidth=2
 set smartcase
@@ -33,6 +34,7 @@ au FileType Jenkinsfile setlocal commentstring=//\ %s
 au BufNewFile,BufRead Jenkinsfile* setf Groovy
 au BufNewFile,BufRead Dockerfile,Dockerfile.*,*.Dockerfile setf dockerfile
 au BufEnter * if &filetype == "" || &filetype == "markdown" | setlocal ft=text | endif
+au BufRead,BufNewFile terragrunt.hcl set filetype=hcl
 
 " Set scripts to be executable from the shell
 au BufWritePost * if getline(1) =~ "^#!" | silent !chmod +x <afile> | endif
@@ -157,7 +159,7 @@ let g:ctrlp_max_files=0
 let g:ctrlp_max_depth=40
 
 " tags
-let g:vim_tags_ctags_binary = '/usr/local/bin/ctags'
+let g:vim_tags_ctags_binary = '/opt/homebrew/bin/ctags'
 let g:vim_tags_ignore_files = ['.gitignore', expand('$HOME/.tagsignore')]
 nnoremap <C-]> g<C-]>
 vnoremap <C-]> g<C-]>
@@ -259,8 +261,8 @@ inoremap <silent><expr> <TAB>
 \   CheckBackspace() ? "\<TAB>" :
 \   coc#refresh()
 
-let g:python3_host_prog = '/usr/local/bin/python3'
-let g:coc_node_path = '/usr/local/bin/node'
+let g:python3_host_prog = '/opt/homebrew/bin/python3'
+let g:coc_node_path = '/opt/homebrew/bin/node'
 
 " vim-go
 let g:go_def_mapping_enabled = 0

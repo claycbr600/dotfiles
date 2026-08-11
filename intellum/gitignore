@@ -5,3 +5,5 @@ vendor
 domain_manager_export
 /deployments/gh-actions/arc/files/
 /.claude
+
+**/.claude/settings.local.json

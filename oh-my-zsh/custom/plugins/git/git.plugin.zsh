@@ -33,10 +33,16 @@ function work_in_progress() {
   fi
 }
 
-# Check if main exists and use instead of master
+# Use master if present, otherwise fall back to main/trunk
 function git_main_branch() {
   command git rev-parse --git-dir &>/dev/null || return
   local ref
+  for ref in refs/{heads,remotes/{origin,upstream}}/master; do
+    if command git show-ref -q --verify $ref; then
+      echo master
+      return
+    fi
+  done
   for ref in refs/{heads,remotes/{origin,upstream}}/{main,trunk}; do
     if command git show-ref -q --verify $ref; then
       echo ${ref:t}

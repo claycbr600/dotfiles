@@ -3,7 +3,7 @@
 2. install oh-my-zsh
 3. install oh-my-zsh custom plugins
   $ cd ~/.oh-my-zsh/custom/plugins
-  $ ln -s ~/.dotfiles/oh-my-zsh/custom/plugins/{git,tmux,vi-mode}
+  $ ln -s ~/.dotfiles/oh-my-zsh/custom/plugins/{git,kubectl,terraform,tmux,vi-mode}
   $ git clone https://github.com/zsh-users/zsh-autosuggestions \
     ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
   $ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git \
@@ -28,15 +28,16 @@
   " set up language servers
   yarn global add bash-language-server
   yarn global add dockerfile-language-server-nodejs
-  go install golang.org/x/tools/gopls@latest
   brew install hashicorp/tap/terraform-ls
+  go install golang.org/x/tools/gopls@latest
 
   ln -s ~/.dotfiles/config/coc/mysnippets ~/.config/coc/
 
 10. install go
   brew install go
   mkdir -p $HOME/go/{bin,src,pkg}
-11. install ultralist
 
-12. install ctags
+11. install ctags
 brew install universal-ctags
+
+12. disable /usr/libexec/path_helper
